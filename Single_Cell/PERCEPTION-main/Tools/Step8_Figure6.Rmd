@@ -1,0 +1,54 @@
+---
+title: "R Notebook"
+output:
+html_notebook: default
+---
+
+<!-- This script is designed to benchmark and compare the performance of the PERCEPTION algorithm with five different published predictors and three random models. The performance comparison is based on the prediction results from three clinical cohorts. The nine models considered in this script are as follows: -->
+
+<!-- PERCEPTION -->
+<!-- BeyondCell (state-of-the-model based on sc-expression) -->
+<!-- ATLANTIS (state-of-the-art bulk-expression based model) -->
+<!-- Pseudo-Bulk (pseudo-bulk-RNA-seq) -->
+<!-- Mean Viability (mean viability across all single cells in a tumor sample) -->
+<!-- Bulk-based-only PERCEPTION (not tuned on SC-expression) -->
+<!-- Random Model 1 (shuffled viability labels) -->
+<!-- Random Model 2 (random gene signatures) -->
+<!-- Random Model 3 (random coefficients) -->
+<!-- The performance metric used for the comparison is the Area Under the Curve (AUC) of the Receiver Operating Characteristic (ROC). This script will generate the AUC values for each of the nine models and display them in Figure 4B. Please note that running nine models for comparison can be computationally intensive and time-consuming. Due to this, only the AUC values are used to generate the figures. -->
+
+
+```{r, setup, include=FALSE}
+# Set working directory to the directory where "PERCEPTION" is cloned.
+working_directory='/Users/sinhas8/PERCEPTION/'
+knitr::opts_knit$set(root.dir = working_directory)
+```
+
+```{r}
+require(tidyverse)
+require(ggplot2)
+```
+
+```{r}
+Model_Perforamnces_PatientCohorts <- readRDS('Data/Model_Perforamnces_PatientCohorts.RDS')
+```
+
+
+```{r}
+Figure6B <- ggplot(Model_Perforamnces_PatientCohorts, aes(x=reorder(str_wrap(model_name, 15), -AUC), y=AUC))+
+  geom_segment(aes(xend=reorder(str_wrap(model_name, 15), -AUC), yend=0)) +
+  geom_point(size=4, color="orange") +
+  theme_bw(base_size = 16)+
+  facet_grid(CancerType~model_type, scales = 'free', space = 'free', shrink = T)+
+  labs(x='Model', y='Stratification AUC')+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))+
+  geom_hline(yintercept = 0.82, linetype='dotted', color='blue')
+ggsave(Figure6B,
+       filename = 'Figures/Figure6B.png', height=7, width=7)
+```
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+

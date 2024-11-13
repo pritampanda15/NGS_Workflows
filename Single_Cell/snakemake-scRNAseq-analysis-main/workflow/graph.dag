@@ -1,0 +1,96 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.44 0.6 0.85", style="rounded"];
+	1[label = "generate_vlnplot\ndataset: AEL_GSE142213", color = "0.22 0.6 0.85", style="rounded,dashed"];
+	2[label = "generate_vlnplot\ndataset: BLCA_GSE149652", color = "0.22 0.6 0.85", style="rounded,dashed"];
+	3[label = "generate_vlnplot\ndataset: BRCA_GSE110686", color = "0.22 0.6 0.85", style="rounded"];
+	4[label = "generate_vlnplot\ndataset: ESCA_GSE154763", color = "0.22 0.6 0.85", style="rounded,dashed"];
+	5[label = "generate_vlnplot\ndataset: Glioma_GSE102130", color = "0.22 0.6 0.85", style="rounded"];
+	6[label = "generate_vlnplot\ndataset: KIRC_GSE111360", color = "0.22 0.6 0.85", style="rounded,dashed"];
+	7[label = "generate_vlnplot\ndataset: LIHC_GSE166635", color = "0.22 0.6 0.85", style="rounded"];
+	8[label = "generate_vlnplot\ndataset: MCC_GSE117988_aPD1aCTLA4", color = "0.22 0.6 0.85", style="rounded,dashed"];
+	9[label = "generate_vlnplot\ndataset: MM_GSE117156", color = "0.22 0.6 0.85", style="rounded"];
+	10[label = "generate_vlnplot\ndataset: NET_GSE140312", color = "0.22 0.6 0.85", style="rounded"];
+	11[label = "generate_vlnplot\ndataset: NHL_GSE147944", color = "0.22 0.6 0.85", style="rounded,dashed"];
+	12[label = "generate_vlnplot\ndataset: NSCLC_GSE127471", color = "0.22 0.6 0.85", style="rounded,dashed"];
+	13[label = "generate_vlnplot\ndataset: OV_GSE115007", color = "0.22 0.6 0.85", style="rounded,dashed"];
+	14[label = "generate_vlnplot\ndataset: PAAD_GSE141017", color = "0.22 0.6 0.85", style="rounded"];
+	15[label = "generate_vlnplot\ndataset: PPB_GSE163678", color = "0.22 0.6 0.85", style="rounded"];
+	16[label = "generate_vlnplot\ndataset: PRAD_GSE150692", color = "0.22 0.6 0.85", style="rounded"];
+	17[label = "generate_vlnplot\ndataset: STAD_GSE167297", color = "0.22 0.6 0.85", style="rounded,dashed"];
+	18[label = "generate_vlnplot\ndataset: UVM_GSE169609", color = "0.22 0.6 0.85", style="rounded,dashed"];
+	19[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded,dashed"];
+	20[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	21[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	22[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	23[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	24[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	25[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	26[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	27[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	28[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	29[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded,dashed"];
+	30[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded,dashed"];
+	31[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	32[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	33[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	34[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	35[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	36[label = "generate_markers", color = "0.00 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 0
+	3 -> 0
+	4 -> 0
+	5 -> 0
+	6 -> 0
+	7 -> 0
+	8 -> 0
+	9 -> 0
+	10 -> 0
+	11 -> 0
+	12 -> 0
+	13 -> 0
+	14 -> 0
+	15 -> 0
+	16 -> 0
+	17 -> 0
+	18 -> 0
+	19 -> 0
+	20 -> 0
+	21 -> 0
+	22 -> 0
+	23 -> 0
+	24 -> 0
+	25 -> 0
+	26 -> 0
+	27 -> 0
+	28 -> 0
+	29 -> 0
+	30 -> 0
+	31 -> 0
+	32 -> 0
+	33 -> 0
+	34 -> 0
+	35 -> 0
+	36 -> 0
+	1 -> 19
+	2 -> 20
+	3 -> 21
+	4 -> 22
+	5 -> 23
+	6 -> 24
+	7 -> 25
+	8 -> 26
+	9 -> 27
+	10 -> 28
+	11 -> 29
+	12 -> 30
+	13 -> 31
+	14 -> 32
+	15 -> 33
+	16 -> 34
+	17 -> 35
+	18 -> 36
+}            

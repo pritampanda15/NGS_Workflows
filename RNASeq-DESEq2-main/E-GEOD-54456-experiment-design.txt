@@ -1,0 +1,180 @@
+Run	sample	tissue
+SRR1146076	normal	normal
+SRR1146077	psoriasis	lesional skin
+SRR1146078	psoriasis	lesional skin
+SRR1146079	psoriasis	lesional skin
+SRR1146080	psoriasis	lesional skin
+SRR1146081	psoriasis	lesional skin
+SRR1146082	psoriasis	lesional skin
+SRR1146083	psoriasis	lesional skin
+SRR1146084	psoriasis	lesional skin
+SRR1146085	normal	normal
+SRR1146086	normal	normal
+SRR1146087	psoriasis	lesional skin
+SRR1146088	normal	normal
+SRR1146089	psoriasis	lesional skin
+SRR1146090	psoriasis	lesional skin
+SRR1146091	psoriasis	lesional skin
+SRR1146092	psoriasis	lesional skin
+SRR1146093	psoriasis	lesional skin
+SRR1146094	psoriasis	lesional skin
+SRR1146095	psoriasis	lesional skin
+SRR1146096	normal	normal
+SRR1146097	psoriasis	lesional skin
+SRR1146098	psoriasis	lesional skin
+SRR1146099	psoriasis	lesional skin
+SRR1146100	psoriasis	lesional skin
+SRR1146101	normal	normal
+SRR1146102	psoriasis	lesional skin
+SRR1146103	psoriasis	lesional skin
+SRR1146104	psoriasis	lesional skin
+SRR1146105	psoriasis	lesional skin
+SRR1146106	normal	normal
+SRR1146107	normal	normal
+SRR1146108	normal	normal
+SRR1146109	normal	normal
+SRR1146110	psoriasis	lesional skin
+SRR1146111	normal	normal
+SRR1146112	psoriasis	lesional skin
+SRR1146113	normal	normal
+SRR1146114	normal	normal
+SRR1146115	normal	normal
+SRR1146116	normal	normal
+SRR1146117	normal	normal
+SRR1146118	normal	normal
+SRR1146119	psoriasis	lesional skin
+SRR1146120	normal	normal
+SRR1146121	normal	normal
+SRR1146122	normal	normal
+SRR1146123	psoriasis	lesional skin
+SRR1146124	psoriasis	lesional skin
+SRR1146125	normal	normal
+SRR1146126	normal	normal
+SRR1146127	normal	normal
+SRR1146128	psoriasis	lesional skin
+SRR1146129	psoriasis	lesional skin
+SRR1146130	normal	normal
+SRR1146131	normal	normal
+SRR1146132	psoriasis	lesional skin
+SRR1146133	psoriasis	lesional skin
+SRR1146134	psoriasis	lesional skin
+SRR1146135	psoriasis	lesional skin
+SRR1146136	psoriasis	lesional skin
+SRR1146137	normal	normal
+SRR1146138	normal	normal
+SRR1146139	normal	normal
+SRR1146140	psoriasis	lesional skin
+SRR1146141	psoriasis	lesional skin
+SRR1146142	normal	normal
+SRR1146143	normal	normal
+SRR1146144	normal	normal
+SRR1146145	normal	normal
+SRR1146146	normal	normal
+SRR1146147	psoriasis	lesional skin
+SRR1146148	psoriasis	lesional skin
+SRR1146149	psoriasis	lesional skin
+SRR1146150	psoriasis	lesional skin
+SRR1146151	psoriasis	lesional skin
+SRR1146152	psoriasis	lesional skin
+SRR1146153	normal	normal
+SRR1146154	psoriasis	lesional skin
+SRR1146155	psoriasis	lesional skin
+SRR1146156	psoriasis	lesional skin
+SRR1146157	psoriasis	lesional skin
+SRR1146158	psoriasis	lesional skin
+SRR1146159	psoriasis	lesional skin
+SRR1146160	psoriasis	lesional skin
+SRR1146161	psoriasis	lesional skin
+SRR1146162	psoriasis	lesional skin
+SRR1146163	psoriasis	lesional skin
+SRR1146164	psoriasis	lesional skin
+SRR1146165	psoriasis	lesional skin
+SRR1146166	normal	normal
+SRR1146167	normal	normal
+SRR1146168	psoriasis	lesional skin
+SRR1146169	normal	normal
+SRR1146170	normal	normal
+SRR1146171	normal	normal
+SRR1146172	normal	normal
+SRR1146173	normal	normal
+SRR1146174	normal	normal
+SRR1146175	normal	normal
+SRR1146176	normal	normal
+SRR1146177	normal	normal
+SRR1146178	normal	normal
+SRR1146179	normal	normal
+SRR1146180	normal	normal
+SRR1146181	normal	normal
+SRR1146182	normal	normal
+SRR1146183	normal	normal
+SRR1146184	normal	normal
+SRR1146185	normal	normal
+SRR1146186	normal	normal
+SRR1146187	normal	normal
+SRR1146188	normal	normal
+SRR1146189	normal	normal
+SRR1146190	normal	normal
+SRR1146191	normal	normal
+SRR1146192	normal	normal
+SRR1146193	normal	normal
+SRR1146194	normal	normal
+SRR1146195	normal	normal
+SRR1146196	normal	normal
+SRR1146197	normal	normal
+SRR1146198	normal	normal
+SRR1146199	psoriasis	lesional skin
+SRR1146200	normal	normal
+SRR1146201	normal	normal
+SRR1146202	psoriasis	lesional skin
+SRR1146203	psoriasis	lesional skin
+SRR1146204	psoriasis	lesional skin
+SRR1146205	psoriasis	lesional skin
+SRR1146206	psoriasis	lesional skin
+SRR1146207	normal	normal
+SRR1146208	psoriasis	lesional skin
+SRR1146209	psoriasis	lesional skin
+SRR1146210	psoriasis	lesional skin
+SRR1146211	psoriasis	lesional skin
+SRR1146212	psoriasis	lesional skin
+SRR1146213	normal	normal
+SRR1146214	psoriasis	lesional skin
+SRR1146215	psoriasis	lesional skin
+SRR1146216	psoriasis	lesional skin
+SRR1146217	psoriasis	lesional skin
+SRR1146218	psoriasis	lesional skin
+SRR1146219	psoriasis	lesional skin
+SRR1146220	psoriasis	lesional skin
+SRR1146221	psoriasis	lesional skin
+SRR1146222	psoriasis	lesional skin
+SRR1146223	psoriasis	lesional skin
+SRR1146224	psoriasis	lesional skin
+SRR1146225	psoriasis	lesional skin
+SRR1146226	psoriasis	lesional skin
+SRR1146227	psoriasis	lesional skin
+SRR1146228	psoriasis	lesional skin
+SRR1146229	psoriasis	lesional skin
+SRR1146230	normal	normal
+SRR1146231	normal	normal
+SRR1146232	normal	normal
+SRR1146233	psoriasis	lesional skin
+SRR1146234	psoriasis	lesional skin
+SRR1146235	psoriasis	lesional skin
+SRR1146236	normal	normal
+SRR1146237	psoriasis	lesional skin
+SRR1146238	normal	normal
+SRR1146239	psoriasis	lesional skin
+SRR1146240	psoriasis	lesional skin
+SRR1146241	psoriasis	lesional skin
+SRR1146242	psoriasis	lesional skin
+SRR1146243	normal	normal
+SRR1146244	normal	normal
+SRR1146245	normal	normal
+SRR1146246	normal	normal
+SRR1146247	normal	normal
+SRR1146248	normal	normal
+SRR1146249	normal	normal
+SRR1146250	normal	normal
+SRR1146251	normal	normal
+SRR1146252	psoriasis	lesional skin
+SRR1146253	psoriasis	lesional skin
+SRR1146254	psoriasis	lesional skin

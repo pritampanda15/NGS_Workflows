@@ -1,0 +1,27 @@
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-base=4.1
+  - r-seurat
+  - r-ggplot2
+  - r-patchwork
+  - r-tidyverse
+   # Assuming you meant r-hdf5r, but for Bioconductor related to HDF5 data
+  - r-ggsci
+  - r-rcolorbrewer
+# Correcting the name to the Bioconductor package if this was the intent
+  - r-reticulate
+# Check if this package exists under a different name or source
+  - r-cowplot
+  - r-viridis
+  - r-pheatmap
+  - bioconductor-biocparallel
+  - bioconductor-celldex # Correct package name if available
+  - bioconductor-doubletfinder
+  - bioconductor-glmgampoi
+  - bioconductor-hdf5array
+  - bioconductor-scranr
+  - bioconductor-singlecellexperiment
+  - bioconductor-singler=2.4.1

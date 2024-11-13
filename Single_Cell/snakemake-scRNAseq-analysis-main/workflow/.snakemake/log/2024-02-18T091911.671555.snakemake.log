@@ -1,0 +1,117 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                 count
+----------------  -------
+all                     1
+generate_markers        3
+generate_vlnplot        3
+total                   7
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Feb 18 09:19:11 2024]
+localrule generate_vlnplot:
+    input: ../data/BLCA_GSE130001_expression.h5
+    output: ../results/BLCA_GSE130001/vlnplot.png, ../results/BLCA_GSE130001/seurat_object.rds
+    jobid: 2
+    reason: Missing output files: ../results/BLCA_GSE130001/vlnplot.png, ../results/BLCA_GSE130001/seurat_object.rds
+    wildcards: dataset=BLCA_GSE130001
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Sun Feb 18 09:19:42 2024]
+Finished job 2.
+1 of 7 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Feb 18 09:19:42 2024]
+localrule generate_vlnplot:
+    input: ../data/BLCA_GSE145281_aPDL1_expression.h5
+    output: ../results/BLCA_GSE145281_aPDL1/vlnplot.png, ../results/BLCA_GSE145281_aPDL1/seurat_object.rds
+    jobid: 3
+    reason: Missing output files: ../results/BLCA_GSE145281_aPDL1/seurat_object.rds, ../results/BLCA_GSE145281_aPDL1/vlnplot.png
+    wildcards: dataset=BLCA_GSE145281_aPDL1
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Sun Feb 18 09:20:45 2024]
+Finished job 3.
+2 of 7 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Feb 18 09:20:45 2024]
+localrule generate_markers:
+    input: ../results/BLCA_GSE130001/seurat_object.rds
+    output: ../results/BLCA_GSE130001/seurat_markers.csv
+    jobid: 5
+    reason: Missing output files: ../results/BLCA_GSE130001/seurat_markers.csv; Input files updated by another job: ../results/BLCA_GSE130001/seurat_object.rds
+    wildcards: dataset=BLCA_GSE130001
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Sun Feb 18 09:21:12 2024]
+Finished job 5.
+3 of 7 steps (43%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Feb 18 09:21:12 2024]
+localrule generate_markers:
+    input: ../results/BLCA_GSE145281_aPDL1/seurat_object.rds
+    output: ../results/BLCA_GSE145281_aPDL1/seurat_markers.csv
+    jobid: 6
+    reason: Missing output files: ../results/BLCA_GSE145281_aPDL1/seurat_markers.csv; Input files updated by another job: ../results/BLCA_GSE145281_aPDL1/seurat_object.rds
+    wildcards: dataset=BLCA_GSE145281_aPDL1
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Sun Feb 18 09:23:17 2024]
+Finished job 6.
+4 of 7 steps (57%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Feb 18 09:23:17 2024]
+localrule generate_vlnplot:
+    input: ../data/BLCA_GSE149652_expression.h5
+    output: ../results/BLCA_GSE149652/vlnplot.png, ../results/BLCA_GSE149652/seurat_object.rds
+    jobid: 1
+    reason: Missing output files: ../results/BLCA_GSE149652/seurat_object.rds, ../results/BLCA_GSE149652/vlnplot.png
+    wildcards: dataset=BLCA_GSE149652
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Sun Feb 18 09:24:18 2024]
+Finished job 1.
+5 of 7 steps (71%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Feb 18 09:24:18 2024]
+localrule generate_markers:
+    input: ../results/BLCA_GSE149652/seurat_object.rds
+    output: ../results/BLCA_GSE149652/seurat_markers.csv
+    jobid: 4
+    reason: Missing output files: ../results/BLCA_GSE149652/seurat_markers.csv; Input files updated by another job: ../results/BLCA_GSE149652/seurat_object.rds
+    wildcards: dataset=BLCA_GSE149652
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Sun Feb 18 09:26:21 2024]
+Finished job 4.
+6 of 7 steps (86%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Feb 18 09:26:21 2024]
+localrule all:
+    input: ../results/BLCA_GSE149652/vlnplot.png, ../results/BLCA_GSE130001/vlnplot.png, ../results/BLCA_GSE145281_aPDL1/vlnplot.png, ../results/BLCA_GSE149652/seurat_markers.csv, ../results/BLCA_GSE130001/seurat_markers.csv, ../results/BLCA_GSE145281_aPDL1/seurat_markers.csv
+    jobid: 0
+    reason: Input files updated by another job: ../results/BLCA_GSE149652/seurat_markers.csv, ../results/BLCA_GSE149652/vlnplot.png, ../results/BLCA_GSE130001/vlnplot.png, ../results/BLCA_GSE130001/seurat_markers.csv, ../results/BLCA_GSE145281_aPDL1/seurat_markers.csv, ../results/BLCA_GSE145281_aPDL1/vlnplot.png
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Sun Feb 18 09:26:21 2024]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2024-02-18T091911.671555.snakemake.log

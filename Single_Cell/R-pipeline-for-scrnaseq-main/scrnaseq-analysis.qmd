@@ -1,0 +1,529 @@
+---
+title: "scrnaseq-analysis"
+author: "Pritam Kumar Panda"
+format: html
+editor: visual
+---
+
+# Load the environment
+
+```{r load_the_environment}
+renv::status()
+renv::snapshot()
+renv::activate()
+options(timeout = max(1000, getOption("timeout")))
+```
+
+```{r install_the_packages}
+#install.packages("Seurat")
+#install.packages("SeuratObject")
+#install.packages("ggplot2")
+#install.packages("patchwork")
+#install.packages("tidyverse")
+#install.packages("dplyr")
+#install.packages("ggsci")
+#install.packages("viridis")
+#install.packages("pheatmap")
+#install.packages("devtools")
+#install.packages("hdf5r")
+```
+
+```{r}
+#if (!require("BiocManager", quietly = TRUE))
+#    install.packages("BiocManager")
+#BiocManager::install(version = "3.18")
+#BiocManager::install("BiocParallel")
+```
+
+```{r}
+#if old packages pops up to update a/s/n then just simply do
+#install() and press enter.
+#BiocManager::install("DESeq2")
+#BiocManager::install("scran")
+#BiocManager::install("celldex")
+#BiocManager::install("glmGamPoi")
+#remotes::install_github('chris-mcginnis-ucsf/DoubletFinder')
+#BiocManager::install("SingleR")
+```
+
+```{r}
+library(SingleR)
+library(scran)
+library(ggplot2)
+library(BiocParallel)
+register(SnowParam(workers = 20, progressbar = TRUE))
+library(Seurat)
+library(ggplot2)
+library(patchwork)
+library(tidyverse)
+library(hdf5r)
+library(ggsci)
+library(celldex)
+library(RColorBrewer)
+library(SingleCellExperiment)
+library(patchwork)
+library(glmGamPoi)
+library(reticulate)
+library(DoubletFinder)
+library(cowplot)
+library(viridis)
+library(pheatmap)
+
+```
+
+To start the analysis, let’s read in the `10X`-corrected matrices. If starting from typical `Cell Ranger` output, it’s possible to choose if you want to use Ensemble ID or gene symbol for the count matrix. This is done using `gene.column` option; default is ‘2,’ which is gene symbol.
+
+```{r Read_the_data}
+#1. check if the file exist
+file.exists("KICH_GSE159115_expression.h5")
+file.exists("KICH_GSE159115_CellMetainfo_table.tsv")
+adj_matrix <- Seurat::Read10X_h5(filename = "KICH_GSE159115_expression.h5", use.names = T)
+#metadata   <- as.data.frame(read_tsv("KICH_GSE159115_CellMetainfo_table.tsv",show_col_types = FALSE))
+```
+
+After this, we will make a `Seurat` object. Seurat object summary shows us that 1) number of cells (“samples”) approximately matches the description of each dataset; 2) genes (features) in the reference.
+
+```{r}
+seurat_obj <- CreateSeuratObject(counts = adj_matrix ,project = "TISCH2",min.cells = 3, min.features = 200 )
+seurat_obj
+str(seurat_obj)
+```
+
+```{r}
+# Assuming you have a Seurat object named seurat_object
+
+# Save the Seurat object as an RDS file
+saveRDS(seurat_obj, file = "seurat_object.rds")
+```
+
+Let’s erase `adj.matrix` from memory to save RAM, and look at the `Seurat` object a bit closer. `str` commant allows us to see all fields of the class:
+
+```{r}
+adj.matrix <- NULL
+str(seurat_obj)
+```
+
+Meta.data is the most important field for next steps. It can be acessed using both \@ and \[\[\]\] operators. Right now it has 3 fields per celL: dataset ID, number of UMI reads detected per cell (nCount_RNA), and the number of expressed (detected) genes per same cell (nFeature_RNA).
+
+```{#{r now add metadata to the seurat object}
+
+#row.names(meta) <- colnames(x=seurat_obj)
+#or
+##row.names(meta) <- meta$Cell
+##pacreas_meta_1 <- AddMetaData(pan_seo, metadata = meta)
+##head(pacreas_meta_1)
+
+#head(colnames(x= seurat_obj))
+#meta <- AddMetaData(seurat_obj, meta, row.names("Celltype"))
+#head(meta)
+```
+
+```{r}
+#meta <- seurat_obj@meta.data
+#dim(meta)
+#head(meta)
+#colnames(meta)
+#summary(meta$nCount_RNA)
+#summary(meta$nFeature_RNA)
+```
+
+Let’s add several more values useful in diagnostics of cell quality. Michochondrial genes are useful indicators of cell state.
+
+For **mouse** datasets, change pattern to “Mt-,” or explicitly list gene IDs with the *features = …* option.
+
+Similarly, we can define ribosomal proteins (their names begin with **RPS** or **RPL**), which often take substantial fraction of reads:
+
+```{r}
+seurat_obj[["percent.mt"]] <- PercentageFeatureSet(seurat_obj, pattern = "^MT")
+seurat_obj[["percent.rb"]] <- PercentageFeatureSet(seurat_obj, pattern = "^RP[SL]")
+
+```
+
+A modeling framework for the normalization and variance stabilization of molecular count data from scRNA-seq experiments. This procedure omits the need for heuristic steps including pseudocount addition or log-transformation and improves common downstream analytical tasks such as variable gene selection, dimensional reduction, and differential expression `sctransform`.
+
+```{r}
+seurat_obj <- SCTransform(seurat_obj, vars.to.regress = "percent.mt", verbose = FALSE)
+```
+
+Pearson correlation between the two features is displayed above the plot
+
+High degree: If the coefficient value lies **between ± 0.50 and ± 1**, then it is said to be a strong correlation. Moderate degree: If the value lies between ± 0.30 and ± 0.49, then it is said to be a medium correlation.
+
+The Pearson correlation measures the strength of the linear relationship between two variables. It has a value between -1 to 1, with a value of **-1 meaning a total negative linear correlation**, 0 being no correlation, and + 1 meaning a total positive correlation.
+
+```{r}
+#Plots
+VlnPlot(seurat_obj, features = c("nFeature_RNA","nCount_RNA","percent.mt","percent.rb"),ncol = 4,pt.size = 0.1) & 
+  theme(plot.title = element_text(size=10))
+FeatureScatter(seurat_obj, feature1 = "nCount_RNA", feature2 = "percent.mt")
+FeatureScatter(seurat_obj, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
+FeatureScatter(seurat_obj, feature1 = "nCount_RNA", feature2 = "percent.rb")
+FeatureScatter(seurat_obj, feature1 = "percent.rb", feature2 = "percent.mt")
+```
+
+```{r}
+#*__________Quality Control And Filtering_________
+seurat_obj <- subset(seurat_obj, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
+str(seurat_obj)
+```
+
+In order to do further analysis, we need to normalize the data to account for sequencing depth. Conventional way is to scale it to 10,000 (as if all cells have 10k UMIs overall), and log2-transform the obtained values. Normalized data are stored in `srat[['RNA']]@data` of the ‘RNA’ assay.
+
+```{r}
+#___________Normalization and Feature Selection____________
+seurat_obj <- NormalizeData(seurat_obj, normalization.method = "LogNormalize", scale.factor = 10000)
+seurat_obj <- FindVariableFeatures(seurat_obj, selection.method = "vst", nfeatures = 2000)
+
+```
+
+Identify top 10 highly variable genes
+
+```{r}
+# Identify the 10 most highly variable genes
+top10 <- head(VariableFeatures(seurat_obj), 10)
+top10
+# plot variable features with and without labels
+plot1 <- VariableFeaturePlot(seurat_obj)
+plot2 <- LabelPoints(plot = plot1, points = top10, repel = TRUE,xnudge=0,ynudge=0)
+plot1 + plot2
+```
+
+```{r}
+plot1 <- VariableFeaturePlot(seurat_obj)
+LabelPoints(plot = plot1, points = top10, repel = TRUE, xnudge = 0, ynudge = 0, max.overlaps = 20)
+```
+
+`ScaleData` converts normalized gene expression to Z-score (values centered at 0 and with variance of 1). It’s stored in `srat[['RNA']]@scale.data` and used in following PCA. Default is to run scaling only on variable genes.
+
+```{r}
+#*************************************************
+#__________Scaling the data__________
+all.genes <- rownames(seurat_obj)
+seurat_obj <- ScaleData(seurat_obj, features = all.genes)
+
+```
+
+PCA
+
+```{r}
+#_________Linear Dimensional Reduction_____________
+seurat_obj <- RunPCA(seurat_obj, features = VariableFeatures(object = seurat_obj))
+#Examine PCA Results
+# Examine and visualize PCA results a few different ways
+print(seurat_obj[["pca"]], dims = 1:5, nfeatures = 5)
+
+```
+
+PCA plots
+
+```{r}
+#PLOTS PCA
+VizDimLoadings(seurat_obj, dims = 1:9, reduction = "pca") & 
+  theme(axis.text=element_text(size=5), axis.title=element_text(size=8,face="bold"))
+
+DimPlot(seurat_obj, reduction = "pca")
+DimPlot(seurat_obj, reduction = "pca") + NoLegend()
+
+DimHeatmap(seurat_obj, dims = 1, cells = 500, balanced = TRUE)
+DimHeatmap(seurat_obj, dims = 1:6, nfeatures = 20, cells = 500, balanced = T)
+DimHeatmap(seurat_obj, dims = 1:15, nfeatures = 20, cells = 500, balanced = T)
+
+#________Determine Dimensionality Of The Dataset_________
+ElbowPlot(seurat_obj)
+```
+
+We can now do clustering. Higher resolution leads to more clusters (default is 0.8). It would be very important to find the correct cluster resolution in the future, since cell type markers depends on cluster definition.
+
+```{r}
+#********************************************************
+#___________FindNeighbours For Clustering_________________
+seurat_obj <- FindNeighbors(seurat_obj, dims = 1:15) #Depending on Dimensionality,clustering will bet set accordingly
+seurat_obj <- FindClusters(seurat_obj, resolution = 0.5)
+
+head(Idents(seurat_obj), 5)
+```
+
+```{r}
+#************************************************************
+#__________Non-Linear Dimensional Reduction____________________
+seurat_obj <- RunPCA(seurat_obj, verbose = F)
+seurat_obj <- RunUMAP(seurat_obj, dims = 1:15)
+seurat_obj <- RunTSNE(seurat_obj, dims = 1:15)
+
+```
+
+Once clustering is done, active identity is reset to clusters (“seurat_clusters” in metadata). Let’s look at cluster sizes
+
+```{r}
+table(seurat_obj@meta.data$seurat_clusters)
+```
+
+```{r}
+#Plot
+DimPlot(seurat_obj,label.size = 4,repel = T,label = T)
+pca_plot <- DimPlot(seurat_obj, reduction = "pca")
+umap_plot <- DimPlot(seurat_obj, reduction = "umap")
+tsne_plot <- DimPlot(seurat_obj, reduction = "tsne")
+combined_plot <- plot_grid(
+  pca_plot + theme(legend.position = "none"),
+  umap_plot + theme(legend.position = "none"), 
+  tsne_plot + theme(legend.position = "none"),
+  labels = c("PCA PLOT" , "UMAP PLOT", "t-SNE PLOT"), ncol = 3
+)
+print(combined_plot)
+```
+
+Cluster Markers
+
+```{r}
+#*************************************************
+#*____________Differential Expression and Marker Selection || CLUSTER BIOMARKERS____________
+DefaultAssay(seurat_obj) <- "RNA"
+seurat_obj <- NormalizeData(seurat_obj)
+seurat_obj <- FindVariableFeatures(seurat_obj, selection.method = "vst", nfeatures = 2000)
+all.genes <- rownames(seurat_obj)
+seurat_obj <- ScaleData(seurat_obj, features = all.genes)
+#Find markers for every cluster compared to all remaining cells, report only the positive ones
+all.markers <- FindAllMarkers(seurat_obj, only.pos = T, min.pct = 0.5, logfc.threshold = 0.5)
+all.markers %>% group_by(cluster) %>% top_n(n = 2, wt = avg_log2FC)
+
+top5_markers <- as.data.frame(all.markers %>% group_by(cluster) %>% top_n(n = 5, wt = avg_log2FC))
+top5_markers
+
+top5_markers <- as.data.frame(all.markers %>% group_by(cluster) %>% top_n(n = 5, wt = avg_log2FC))
+top5_markers
+# find all markers of cluster 1
+#cluster1.markers <- FindMarkers(seurat_obj, ident.1 = 1)
+#head(cluster1.markers, n = 5)
+
+# find all markers distinguishing cluster 5 from clusters 0 and 3
+#cluster5.markers <- FindMarkers(seurat_obj, ident.1 = 5, ident.2 = c(0, 3))
+#head(cluster5.markers, n = 5)
+
+# Save the aggregated markers as a CSV file in the current working directory
+write.csv(all.markers, file = "seurat_markers.csv", row.names = FALSE)
+
+```
+
+More defined plots
+
+```{r}
+#__________________PLOTS_____________________
+#_________DimPlot___________
+seurat_obj <- RunUMAP(seurat_obj, dims = 1:15)
+DimPlot(seurat_obj, reduction = "umap",label=TRUE)
+DimPlot(seurat_obj)
+
+#______VlnPlot________
+VlnPlot(seurat_obj, features = c("HCK", "SMOC2"))
+VlnPlot(seurat_obj, features = c("HCK", "SMOC2"), slot = "counts", log = TRUE)
+
+#_____featurePlot______
+FeaturePlot(seurat_obj, features = c("MS4A1", "GNLY", "CD3E", "CD14", "FCER1A", "FCGR3A", "LYZ", "PPBP","CD8A"))
+features <- VariableFeatures(seurat_obj)
+FeaturePlot(seurat_obj, features = features[1:5])
+FeaturePlot(seurat_obj, features = features[1:2], blend = TRUE)
+
+# ___interactive plots --------
+plot <- FeaturePlot(seurat_obj, features = c("HCK"))
+HoverLocator(plot = plot, information = FetchData(seurat_obj, vars = c("ident", "PC_1", "nFeature_RNA")))
+#___Heatmap_____
+all.markers %>%
+  group_by(cluster) %>%
+  dplyr::filter(avg_log2FC > 1) %>%
+  slice_head(n = 10) %>%
+  ungroup() -> top10
+DoHeatmap(seurat_obj, features = top10$gene) + NoLegend()
+DoHeatmap(seurat_obj, features = VariableFeatures(seurat_obj)[1:100], cells = 1:500, size = 4,
+          angle = 90) + NoLegend()
+```
+
+Automating visualization of top5 marker genes
+
+```{r}
+library(ggplot2)  # Required for visualization functions
+
+# Function to generate violin plots for top gene markers
+plot_top_markers <- function(seurat_obj, top_markers) {
+  for (gene in top5_markers) {
+    VlnPlot(seurat_obj, features = gene)
+  }
+}
+
+# Function to generate feature plots for top gene markers
+plot_feature_markers <- function(seurat_obj, top_markers) {
+  FeaturePlot(seurat_obj, features = top_markers)
+}
+
+# Example: Assuming you have already identified top gene markers and stored them in 'top5_markers'
+top5_markers <- as.character(top5_markers$gene)  # Convert to character vector if needed
+
+# Generate violin plots for top gene markers
+plot_top_markers(seurat_obj, top5_markers)
+
+# Generate feature plots for top gene markers
+plot_feature_markers(seurat_obj, top5_markers)
+
+```
+
+Cell cycle sorting
+
+```{r}
+#*************************************************
+#*____________Cell-Cycle Scoring_________________
+cc.genes.updated.2019
+s.genes <- cc.genes.updated.2019$s.genes
+g2m.genes <- cc.genes.updated.2019$g2m.genes
+#assign Cell Score
+seurat_obj <- CellCycleScoring(seurat_obj, s.features = s.genes, g2m.features = g2m.genes, set.ident = TRUE,use.synonyms = TRUE)
+
+# view cell cycle scores and phase assignments
+head(seurat_obj[[]])
+table(seurat_obj[[]]$Phase)
+
+#PLOT- Visualize the distribution of cell cycle markers across
+RidgePlot(seurat_obj, features = c("MCM5", "PCNA", "TYMS", "FEN1"), ncol = 2)
+# Running a PCA on cell cycle genes reveals, unsurprisingly, that cells separate entirely by
+# phase
+seurat_obj <- RunPCA(seurat_obj, features = c(s.genes, g2m.genes))
+DimPlot(seurat_obj)
+
+#Regress out cell cycle scores
+seurat_obj$CC.Difference <- seurat_obj$S.Score - seurat_obj$G2M.Score
+seurat_obj <- ScaleData(seurat_obj, vars.to.regress = "CC.Difference", features = rownames(seurat_obj))
+
+# When running a PCA on cell cycle genes, actively proliferating cells remain distinct from G1
+# Cells; however, within actively proliferating cells, G2M and S phase cells group together
+seurat_obj <- RunPCA(seurat_obj, features = c(s.genes, g2m.genes))
+DimPlot(seurat_obj)
+
+
+#clusters defined by any of the technical differences
+FeaturePlot(seurat_obj,features = "percent.mt",label.size = 4,repel = T,label = T) & 
+  theme(plot.title = element_text(size=10))
+VlnPlot(seurat_obj,features = "percent.mt") & theme(plot.title = element_text(size=10))
+FeaturePlot(seurat_obj,features = "percent.rb",label.size = 4,repel = T,label = T) & theme(plot.title = element_text(size=10))
+VlnPlot(seurat_obj,features = "percent.rb") & theme(plot.title = element_text(size=10))
+VlnPlot(seurat_obj,features = c("nCount_RNA","nFeature_RNA")) & 
+  theme(plot.title = element_text(size=10))
+
+FeaturePlot(seurat_obj,features = c("S.Score","G2M.Score"),label.size = 4,repel = T,label = T) & 
+  theme(plot.title = element_text(size=10))
+VlnPlot(seurat_obj,features = c("S.Score","G2M.Score")) & 
+  theme(plot.title = element_text(size=10))
+
+#SCTransform as an alternative as Single SCTransform command replaces NormalizeData, ScaleData, and FindVariableFeatures.
+
+#seurat_obj <- SCTransform(seurat_obj, method = "glmGamPoi", ncells = 8824,vars.to.regress = c("percent.mt","S.Score","G2M.Score"), verbose = F)
+#seurat_obj
+
+```
+
+## Cell type annotation using SingleR
+
+```{r}
+monaco.ref <- celldex::MonacoImmuneData()
+hpca.ref <- celldex::HumanPrimaryCellAtlasData()
+dice.ref <- celldex::DatabaseImmuneCellExpressionData()
+```
+
+Let’s convert our Seurat object to single cell experiment (SCE) for convenience. After this, using `SingleR` becomes very easy:
+
+```{r}
+sce <- as.SingleCellExperiment(DietSeurat(seurat_obj))
+sce
+```
+
+```{r}
+monaco.main <- SingleR(test = sce,assay.type.test = 1,ref = monaco.ref,labels = monaco.ref$label.main)
+monaco.fine <- SingleR(test = sce,assay.type.test = 1,ref = monaco.ref,labels = monaco.ref$label.fine)
+hpca.main <- SingleR(test = sce,assay.type.test = 1,ref = hpca.ref,labels = hpca.ref$label.main)
+hpca.fine <- SingleR(test = sce,assay.type.test = 1,ref = hpca.ref,labels = hpca.ref$label.fine)
+dice.main <- SingleR(test = sce,assay.type.test = 1,ref = dice.ref,labels = dice.ref$label.main)
+dice.fine <- SingleR(test = sce,assay.type.test = 1,ref = dice.ref,labels = dice.ref$label.fine)
+```
+
+```{r}
+table(monaco.main$pruned.labels)
+
+```
+
+```{r}
+table(hpca.main$pruned.labels)
+
+```
+
+```{r}
+table(dice.main$pruned.labels)
+```
+
+Add annotations to the metadata
+
+```{r}
+seurat_obj@meta.data$monaco.main <- monaco.main$pruned.labels
+seurat_obj@meta.data$monaco.fine <- monaco.fine$pruned.labels
+seurat_obj@meta.data$hpca.main   <- hpca.main$pruned.labels
+seurat_obj@meta.data$dice.main   <- dice.main$pruned.labels
+seurat_obj@meta.data$hpca.fine   <- hpca.fine$pruned.labels
+seurat_obj@meta.data$dice.fine   <- dice.fine$pruned.labels
+```
+
+Visulaize
+
+```{r}
+seurat_obj <- SetIdent(seurat_obj, value = "monaco.fine")
+DimPlot(seurat_obj, label = T , repel = T, label.size = 3) + NoLegend()
+```
+
+```{r}
+seurat_obj <- SetIdent(seurat_obj, value = "hpca.fine")
+DimPlot(seurat_obj, label = T , repel = T, label.size = 3) + NoLegend()
+```
+
+```{r}
+seurat_obj <- SetIdent(seurat_obj, value = "dice.fine")
+DimPlot(seurat_obj, label = T , repel = T, label.size = 3) + NoLegend()
+```
+
+```{r}
+FeaturePlot(seurat_obj,"CD38") + scale_colour_gradientn(colours = rev(brewer.pal(n = 11, name = "Spectral")))
+```
+
+```{r}
+#****************************************************************
+#*__________________VIZUALIZATION PLOTS________________________
+
+str(seurat_obj)
+features <- seurat_obj@commands$RunPCA.RNA$features
+features <- VariableFeatures(seurat_obj)
+
+metadata_columns <- colnames(seurat_obj@meta.data)
+print(metadata_columns)
+
+
+#_____DimPLot______
+DimPlot(seurat_obj, label = T , repel = T, label.size = 3) + NoLegend()
+DimPlot(seurat_obj)
+
+#______VlnPlot________
+VlnPlot(seurat_obj, features = c("HCK", "SMOC2"))
+VlnPlot(seurat_obj, features = c("HCK", "SMOC2"), slot = "counts", log = TRUE)
+VlnPlot(seurat_obj, features = features) #Visualize single cell expression distributions in each cluster
+VlnPlot(seurat_obj, features = "percent.mt", split.by = "orig.ident")#Need to be fixed split by groups nnot Found
+
+#_____featurePlot______
+FeaturePlot(seurat_obj, features = features[1:5])
+FeaturePlot(seurat_obj, features = features[1:2], blend = TRUE)
+
+#____RidgePlot_________
+RidgePlot(seurat_obj, features = features[1:5], ncol=2)
+
+```
+
+```{r}
+{r}
+# Assuming you have a Seurat object named seurat_object
+
+# Save the Seurat object as an RDS file
+saveRDS(seurat_obj, file = "seurat_object_final.rds")
+```

@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                 count
+----------------  -------
+all                     1
+generate_markers       18
+generate_vlnplot       18
+total                  37
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 18:33:47 2024]
+localrule generate_vlnplot:
+    input: ../data/OV_GSE115007_expression.h5
+    output: ../results/OV_GSE115007/vlnplot.png, ../results/OV_GSE115007/seurat_object.rds
+    log: logs/generate_vlnplot.OV_GSE115007.loglogs/seurat_obj.OV_GSE115007.log
+    jobid: 13
+    reason: Missing output files: ../results/OV_GSE115007/vlnplot.png, ../results/OV_GSE115007/seurat_object.rds
+    wildcards: dataset=OV_GSE115007
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 18:34:33 2024]
+Finished job 13.
+1 of 37 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 18:34:33 2024]
+localrule generate_vlnplot:
+    input: ../data/KIRC_GSE111360_expression.h5
+    output: ../results/KIRC_GSE111360/vlnplot.png, ../results/KIRC_GSE111360/seurat_object.rds
+    log: logs/generate_vlnplot.KIRC_GSE111360.loglogs/seurat_obj.KIRC_GSE111360.log
+    jobid: 6
+    reason: Missing output files: ../results/KIRC_GSE111360/vlnplot.png, ../results/KIRC_GSE111360/seurat_object.rds
+    wildcards: dataset=KIRC_GSE111360
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Terminating processes on user request, this might take some time.

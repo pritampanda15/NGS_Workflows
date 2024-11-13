@@ -1,0 +1,53 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+all                     1
+generate_markers        3
+generate_vlnplot        1
+total                   5
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Feb 18 09:05:18 2024]
+localrule generate_vlnplot:
+    input: ../data/BLCA_GSE149652_expression.h5
+    output: ../results/BLCA_GSE149652/vlnplot.png, ../results/BLCA_GSE149652/seurat_object.rds
+    jobid: 1
+    reason: Missing output files: ../results/BLCA_GSE149652/vlnplot.png, ../results/BLCA_GSE149652/seurat_object.rds
+    wildcards: dataset=BLCA_GSE149652
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Sun Feb 18 09:06:20 2024]
+Finished job 1.
+1 of 5 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Feb 18 09:06:20 2024]
+localrule generate_markers:
+    input: ../results/BLCA_GSE130001/seurat_object.rds
+    output: ../results/BLCA_GSE130001/seurat_markers.csv
+    jobid: 5
+    reason: Missing output files: ../results/BLCA_GSE130001/seurat_markers.csv
+    wildcards: dataset=BLCA_GSE130001
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Sun Feb 18 09:06:26 2024]
+Error in rule generate_markers:
+    jobid: 5
+    input: ../results/BLCA_GSE130001/seurat_object.rds
+    output: ../results/BLCA_GSE130001/seurat_markers.csv
+    shell:
+        Rscript ../scripts/generate_markers.R ../results/BLCA_GSE130001/seurat_object.rds ../results/BLCA_GSE130001/seurat_markers.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-02-18T090518.137140.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

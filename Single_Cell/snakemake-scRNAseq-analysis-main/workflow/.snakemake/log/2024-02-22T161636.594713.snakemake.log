@@ -1,0 +1,279 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                 count
+----------------  -------
+all                     1
+generate_markers       18
+generate_vlnplot       18
+total                  37
+
+Select jobs to execute...
+Execute 4 jobs...
+
+[Thu Feb 22 16:16:38 2024]
+localrule generate_vlnplot:
+    input: ../data/BLCA_GSE149652_expression.h5
+    output: ../results/BLCA_GSE149652/vlnplot.png, ../results/BLCA_GSE149652/seurat_object.rds
+    log: logs/generate_vlnplot..BLCA_GSE149652.loglogs/seurat_obj.BLCA_GSE149652.log
+    jobid: 2
+    reason: Missing output files: ../results/BLCA_GSE149652/vlnplot.png, ../results/BLCA_GSE149652/seurat_object.rds
+    wildcards: dataset=BLCA_GSE149652
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+
+[Thu Feb 22 16:16:38 2024]
+localrule generate_vlnplot:
+    input: ../data/NSCLC_GSE127471_expression.h5
+    output: ../results/NSCLC_GSE127471/vlnplot.png, ../results/NSCLC_GSE127471/seurat_object.rds
+    log: logs/generate_vlnplot..NSCLC_GSE127471.loglogs/seurat_obj.NSCLC_GSE127471.log
+    jobid: 12
+    reason: Missing output files: ../results/NSCLC_GSE127471/vlnplot.png, ../results/NSCLC_GSE127471/seurat_object.rds
+    wildcards: dataset=NSCLC_GSE127471
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+
+[Thu Feb 22 16:16:38 2024]
+localrule generate_vlnplot:
+    input: ../data/MCC_GSE117988_aPD1aCTLA4_expression.h5
+    output: ../results/MCC_GSE117988_aPD1aCTLA4/vlnplot.png, ../results/MCC_GSE117988_aPD1aCTLA4/seurat_object.rds
+    log: logs/generate_vlnplot..MCC_GSE117988_aPD1aCTLA4.loglogs/seurat_obj.MCC_GSE117988_aPD1aCTLA4.log
+    jobid: 8
+    reason: Missing output files: ../results/MCC_GSE117988_aPD1aCTLA4/vlnplot.png, ../results/MCC_GSE117988_aPD1aCTLA4/seurat_object.rds
+    wildcards: dataset=MCC_GSE117988_aPD1aCTLA4
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+
+[Thu Feb 22 16:16:38 2024]
+localrule generate_vlnplot:
+    input: ../data/KIRC_GSE111360_expression.h5
+    output: ../results/KIRC_GSE111360/vlnplot.png, ../results/KIRC_GSE111360/seurat_object.rds
+    log: logs/generate_vlnplot..KIRC_GSE111360.loglogs/seurat_obj.KIRC_GSE111360.log
+    jobid: 6
+    reason: Missing output files: ../results/KIRC_GSE111360/vlnplot.png, ../results/KIRC_GSE111360/seurat_object.rds
+    wildcards: dataset=KIRC_GSE111360
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:16:58 2024]
+Finished job 12.
+1 of 37 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:16:58 2024]
+localrule generate_vlnplot:
+    input: ../data/ESCA_GSE154763_expression.h5
+    output: ../results/ESCA_GSE154763/vlnplot.png, ../results/ESCA_GSE154763/seurat_object.rds
+    log: logs/generate_vlnplot..ESCA_GSE154763.loglogs/seurat_obj.ESCA_GSE154763.log
+    jobid: 4
+    reason: Missing output files: ../results/ESCA_GSE154763/vlnplot.png, ../results/ESCA_GSE154763/seurat_object.rds
+    wildcards: dataset=ESCA_GSE154763
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:19:07 2024]
+Finished job 4.
+2 of 37 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:19:08 2024]
+localrule generate_vlnplot:
+    input: ../data/AEL_GSE142213_expression.h5
+    output: ../results/AEL_GSE142213/vlnplot.png, ../results/AEL_GSE142213/seurat_object.rds
+    log: logs/generate_vlnplot..AEL_GSE142213.loglogs/seurat_obj.AEL_GSE142213.log
+    jobid: 1
+    reason: Missing output files: ../results/AEL_GSE142213/vlnplot.png, ../results/AEL_GSE142213/seurat_object.rds
+    wildcards: dataset=AEL_GSE142213
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:19:46 2024]
+Finished job 8.
+3 of 37 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:19:46 2024]
+localrule generate_markers:
+    input: ../results/NSCLC_GSE127471/seurat_object.rds
+    output: ../results/NSCLC_GSE127471/seurat_markers.csv
+    log: logs/generate_markers.NSCLC_GSE127471log
+    jobid: 30
+    reason: Missing output files: ../results/NSCLC_GSE127471/seurat_markers.csv; Input files updated by another job: ../results/NSCLC_GSE127471/seurat_object.rds
+    wildcards: dataset=NSCLC_GSE127471
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:19:50 2024]
+Finished job 1.
+4 of 37 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:19:50 2024]
+localrule generate_markers:
+    input: ../results/AEL_GSE142213/seurat_object.rds
+    output: ../results/AEL_GSE142213/seurat_markers.csv
+    log: logs/generate_markers.AEL_GSE142213log
+    jobid: 19
+    reason: Missing output files: ../results/AEL_GSE142213/seurat_markers.csv; Input files updated by another job: ../results/AEL_GSE142213/seurat_object.rds
+    wildcards: dataset=AEL_GSE142213
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:20:06 2024]
+Finished job 2.
+5 of 37 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:20:06 2024]
+localrule generate_vlnplot:
+    input: ../data/OV_GSE115007_expression.h5
+    output: ../results/OV_GSE115007/vlnplot.png, ../results/OV_GSE115007/seurat_object.rds
+    log: logs/generate_vlnplot..OV_GSE115007.loglogs/seurat_obj.OV_GSE115007.log
+    jobid: 13
+    reason: Missing output files: ../results/OV_GSE115007/vlnplot.png, ../results/OV_GSE115007/seurat_object.rds
+    wildcards: dataset=OV_GSE115007
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:20:08 2024]
+Finished job 30.
+6 of 37 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:20:08 2024]
+localrule generate_vlnplot:
+    input: ../data/STAD_GSE167297_expression.h5
+    output: ../results/STAD_GSE167297/vlnplot.png, ../results/STAD_GSE167297/seurat_object.rds
+    log: logs/generate_vlnplot..STAD_GSE167297.loglogs/seurat_obj.STAD_GSE167297.log
+    jobid: 17
+    reason: Missing output files: ../results/STAD_GSE167297/vlnplot.png, ../results/STAD_GSE167297/seurat_object.rds
+    wildcards: dataset=STAD_GSE167297
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:20:52 2024]
+Finished job 19.
+7 of 37 steps (19%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:20:52 2024]
+localrule generate_vlnplot:
+    input: ../data/NHL_GSE147944_expression.h5
+    output: ../results/NHL_GSE147944/vlnplot.png, ../results/NHL_GSE147944/seurat_object.rds
+    log: logs/generate_vlnplot..NHL_GSE147944.loglogs/seurat_obj.NHL_GSE147944.log
+    jobid: 11
+    reason: Missing output files: ../results/NHL_GSE147944/seurat_object.rds, ../results/NHL_GSE147944/vlnplot.png
+    wildcards: dataset=NHL_GSE147944
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:21:29 2024]
+Finished job 13.
+8 of 37 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:21:29 2024]
+localrule generate_vlnplot:
+    input: ../data/MM_GSE117156_expression.h5
+    output: ../results/MM_GSE117156/vlnplot.png, ../results/MM_GSE117156/seurat_object.rds
+    log: logs/generate_vlnplot..MM_GSE117156.loglogs/seurat_obj.MM_GSE117156.log
+    jobid: 9
+    reason: Missing output files: ../results/MM_GSE117156/seurat_object.rds, ../results/MM_GSE117156/vlnplot.png
+    wildcards: dataset=MM_GSE117156
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:24:02 2024]
+Finished job 6.
+9 of 37 steps (24%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:24:03 2024]
+localrule generate_vlnplot:
+    input: ../data/UVM_GSE169609_expression.h5
+    output: ../results/UVM_GSE169609/vlnplot.png, ../results/UVM_GSE169609/seurat_object.rds
+    log: logs/generate_vlnplot..UVM_GSE169609.loglogs/seurat_obj.UVM_GSE169609.log
+    jobid: 18
+    reason: Missing output files: ../results/UVM_GSE169609/seurat_object.rds, ../results/UVM_GSE169609/vlnplot.png
+    wildcards: dataset=UVM_GSE169609
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:24:37 2024]
+Finished job 11.
+10 of 37 steps (27%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:24:37 2024]
+localrule generate_markers:
+    input: ../results/NHL_GSE147944/seurat_object.rds
+    output: ../results/NHL_GSE147944/seurat_markers.csv
+    log: logs/generate_markers.NHL_GSE147944log
+    jobid: 29
+    reason: Missing output files: ../results/NHL_GSE147944/seurat_markers.csv; Input files updated by another job: ../results/NHL_GSE147944/seurat_object.rds
+    wildcards: dataset=NHL_GSE147944
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:26:25 2024]
+Finished job 29.
+11 of 37 steps (30%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:26:25 2024]
+localrule generate_vlnplot:
+    input: ../data/LIHC_GSE166635_expression.h5
+    output: ../results/LIHC_GSE166635/vlnplot.png, ../results/LIHC_GSE166635/seurat_object.rds
+    log: logs/generate_vlnplot..LIHC_GSE166635.loglogs/seurat_obj.LIHC_GSE166635.log
+    jobid: 7
+    reason: Missing output files: ../results/LIHC_GSE166635/seurat_object.rds, ../results/LIHC_GSE166635/vlnplot.png
+    wildcards: dataset=LIHC_GSE166635
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:27:04 2024]
+Finished job 18.
+12 of 37 steps (32%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:27:05 2024]
+localrule generate_markers:
+    input: ../results/UVM_GSE169609/seurat_object.rds
+    output: ../results/UVM_GSE169609/seurat_markers.csv
+    log: logs/generate_markers.UVM_GSE169609log
+    jobid: 36
+    reason: Missing output files: ../results/UVM_GSE169609/seurat_markers.csv; Input files updated by another job: ../results/UVM_GSE169609/seurat_object.rds
+    wildcards: dataset=UVM_GSE169609
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 16:29:22 2024]
+Finished job 17.
+13 of 37 steps (35%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 16:29:22 2024]
+localrule generate_vlnplot:
+    input: ../data/NET_GSE140312_expression.h5
+    output: ../results/NET_GSE140312/vlnplot.png, ../results/NET_GSE140312/seurat_object.rds
+    log: logs/generate_vlnplot..NET_GSE140312.loglogs/seurat_obj.NET_GSE140312.log
+    jobid: 10
+    reason: Missing output files: ../results/NET_GSE140312/seurat_object.rds, ../results/NET_GSE140312/vlnplot.png
+    wildcards: dataset=NET_GSE140312
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Terminating processes on user request, this might take some time.
+[Thu Feb 22 16:29:35 2024]
+Error in rule generate_vlnplot:
+    jobid: 10
+    input: ../data/NET_GSE140312_expression.h5
+    output: ../results/NET_GSE140312/vlnplot.png, ../results/NET_GSE140312/seurat_object.rds
+    log: logs/generate_vlnplot..NET_GSE140312.loglogs/seurat_obj.NET_GSE140312.log (check log file(s) for error details)
+    conda-env: seurat_analysis
+    shell:
+        Rscript ../scripts/generate_vlnplot.R ../data/NET_GSE140312_expression.h5 ../results/NET_GSE140312/vlnplot.png ../results/NET_GSE140312/seurat_object.rds NET_GSE140312 --log logs/generate_vlnplot..NET_GSE140312.loglogs/seurat_obj.NET_GSE140312.log
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+

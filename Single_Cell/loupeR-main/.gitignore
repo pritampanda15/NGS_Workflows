@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.Rdata
+.httr-oauth
+.DS_Store
+
+# accidental creation of cloupe file.
+# `converted.cloupe` is the default name
+converted.cloupe

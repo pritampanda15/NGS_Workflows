@@ -1,0 +1,39 @@
+name: Test Seurat workflow with CLI scripts
+
+on: [pull_request]
+
+jobs:
+  setup:
+    name: ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest"]
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Add workspace to path
+        run: |
+          echo "${GITHUB_WORKSPACE}" >> $GITHUB_PATH
+
+      - uses: mamba-org/setup-micromamba@v1
+        with:
+          micromamba-version: '1.4.5-0'
+          environment-file: test-environment.yml
+          init-shell: >-
+            bash
+          cache-environment: true
+          create-args: |
+            python=${{ matrix.python-version }}
+          post-cleanup: 'all'
+
+      - name: Run tests
+        shell: bash -el {0}
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          r-seurat-scripts-post-install-tests.sh

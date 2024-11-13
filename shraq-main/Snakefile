@@ -1,0 +1,133 @@
+
+__author__ = "Pritam Kumar Panda"
+__copyright__ = (
+    "Copyright 2024, Pritam Kumar Panda, DKFZ"
+)
+__email__ = "pritamkumar.pandaa@dkfz-heidelberg.de"
+__license__ = "DKFZ"
+
+import itertools
+import os
+import sys
+import functools
+from os import path
+from snakemake import shell
+from snakemake.io import expand
+from snakemake.logging import logger
+from snakemake.utils import makedirs
+
+
+# GENERIC DATA
+
+ORGANISMS = {
+    'rn4': 'rat',
+    'rn5': 'rat',
+    'mm9': 'mouse',
+    'mm10': 'mouse',
+    'hg19': 'human',
+    'hg38': 'human'
+}
+
+AUTOSOMAL_REFERENCES = {
+    'hg19': ['chr{}'.format(i) for i in range(1, 23)],
+    'hg38': ['chr{}'.format(i) for i in range(1, 23)],
+    'mm9': ['chr{}'.format(i) for i in range(1, 20)],
+    'mm10': ['chr{}'.format(i) for i in range(1, 20)]
+}
+
+CHROMOSOMES = {
+    'hg19': ['chr{}'.format(i) for i in range(1, 23)] + ['chrX', 'chrY'],
+    'hg38': ['chr{}'.format(i) for i in range(1, 23)] + ['chrX', 'chrY'],
+    'mm9': ['chr{}'.format(i) for i in range(1, 20)] + ['chrX', 'chrY'],
+    'mm10': ['chr{}'.format(i) for i in range(1, 20)] + ['chrX', 'chrY']
+}
+
+# PATHS
+# Get the path of the current file
+__file__ = os.path.abspath(__file__)
+# Get the directory name of the current file
+__dirname__ = os.path.dirname(__file__)
+# Get the base name of the current file
+__basename__ = os.path.basename(__file__)
+# Get the base name of the current file without extension
+__basename__ = os.path.splitext(__basename__)[0]
+# Get the name of the current file without extension
+__name__ = os.path.splitext(__basename__)[0]
+# Get the name of the current file
+__name__ = os.path.splitext(__name__)[0]
+
+# RESULT PATHS
+
+prefix_results = functools.partial(os.path.join, config['results'])
+TRIM_DIR = prefix_results('trim')
+BWA_DIR = prefix_results('bwa')
+MERGE_DIR = prefix_results('merge_readgroups')
+MD_DIR = prefix_results('mark_duplicates')
+LOG_DIR = prefix_results('logs')
+VERSION_DIR = prefix_results('versions')
+
+# Helper functions
+
+def iterate_all_libraries() -> Iterator[str]:
+    """Yield all library names."""
+    for library in sorted(config["libraries"].keys()):
+        yield library
+
+def get_all_chroms(genome: str) -> List[str]:
+    """Get all chromosomes, excluding chrM."""
+    tmp = AUTOSOMAL_REFERENCES[genome]
+    """This is hacky and there is probably a better way..."""
+    if "chrX" not in tmp:
+        tmp.extend(["chrX", "chrY"])
+    return tmp
+
+def get_chromosomes(genome):
+    """
+    Return all chromosomes, including chrX and chrY, for the given genome.
+    """
+    return CHROMOSOMES[genome]
+
+def get_readgroup_library(readgroup):
+    """
+    Return the library name associated with the given read group.
+    """
+    for library in iterate_all_libraries():
+        for library_readgroup in iterate_library_readgroups(library):
+            if readgroup == library_readgroup:
+                return library
+
+def get_chrom_size(genome: str, chrom: str) -> int:
+    """Get the size of a given chromosome for a given genome assembly."""
+    return config['chrom_sizes'][genome][chrom]
+
+
+    def check_file_termination(file_path: str) -> None:
+        """Check if a file has the correct termination based on its format."""
+        valid_formats = ['.fastq', '.fq', '.gz', '.gzip', '.bz2', '.bzip2']
+        file_extension = os.path.splitext(file_path)[1].lower()
+        if file_extension not in valid_formats:
+            logger.error(f"Invalid file format for {file_path}.")
+            sys.exit(1)
+
+    def calculate_md5_checksum(file_path: str) -> str:
+        """Calculate the MD5 checksum of a file."""
+        try:
+            with open(file_path, 'rb') as file:
+                md5_hash = hashlib.md5()
+                for chunk in iter(lambda: file.read(4096), b""):
+                    md5_hash.update(chunk)
+                return md5_hash.hexdigest()
+        except IOError as e:
+            logger.error(f"Failed to calculate MD5 checksum for {file_path}: {e}")
+            sys.exit(1)
+
+    def validate_file(file_path: str, expected_md5_checksum: str) -> None:
+        """Validate a file by checking its termination and MD5 checksum."""
+        check_file_termination(file_path)
+        actual_md5_checksum = calculate_md5_checksum(file_path)
+        if actual_md5_checksum != expected_md5_checksum:
+            logger.error(f"MD5 checksum mismatch for {file_path}.")
+            sys.exit(1)
+
+
+

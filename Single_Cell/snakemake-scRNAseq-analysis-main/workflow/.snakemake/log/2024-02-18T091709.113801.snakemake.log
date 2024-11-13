@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                 count
+----------------  -------
+all                     1
+generate_markers        3
+generate_vlnplot        3
+total                   7
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Feb 18 09:17:09 2024]
+localrule generate_vlnplot:
+    input: ../data/BLCA_GSE130001_expression.h5
+    output: ../results/BLCA_GSE130001/vlnplot.png, ../results/BLCA_GSE130001/seurat_object.rds
+    jobid: 2
+    reason: Missing output files: ../results/BLCA_GSE130001/vlnplot.png, ../results/BLCA_GSE130001/seurat_object.rds
+    wildcards: dataset=BLCA_GSE130001
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+WorkflowError:
+Failed to open source file /Users/pritam/workflow_multiple_files/workflow/r_environment.yml
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/pritam/workflow_multiple_files/workflow/r_environment.yml'
+Removing output files of failed job generate_vlnplot since they might be corrupted:
+../results/BLCA_GSE130001/vlnplot.png, ../results/BLCA_GSE130001/seurat_object.rds
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-02-18T091709.113801.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

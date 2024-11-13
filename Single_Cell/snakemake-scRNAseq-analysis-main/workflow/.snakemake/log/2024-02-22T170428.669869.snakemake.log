@@ -1,0 +1,58 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                 count
+----------------  -------
+all                     1
+generate_markers       15
+generate_vlnplot        8
+total                  24
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 17:04:29 2024]
+localrule generate_markers:
+    input: ../results/MCC_GSE117988_aPD1aCTLA4/seurat_object.rds
+    output: ../results/MCC_GSE117988_aPD1aCTLA4/seurat_markers.csv
+    log: logs/generate_markers.MCC_GSE117988_aPD1aCTLA4log
+    jobid: 26
+    reason: Missing output files: ../results/MCC_GSE117988_aPD1aCTLA4/seurat_markers.csv
+    wildcards: dataset=MCC_GSE117988_aPD1aCTLA4
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 17:06:11 2024]
+Finished job 26.
+1 of 24 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 17:06:11 2024]
+localrule generate_markers:
+    input: ../results/UVM_GSE169609/seurat_object.rds
+    output: ../results/UVM_GSE169609/seurat_markers.csv
+    log: logs/generate_markers.UVM_GSE169609log
+    jobid: 36
+    reason: Missing output files: ../results/UVM_GSE169609/seurat_markers.csv
+    wildcards: dataset=UVM_GSE169609
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 17:07:56 2024]
+Error in rule generate_markers:
+    jobid: 36
+    input: ../results/UVM_GSE169609/seurat_object.rds
+    output: ../results/UVM_GSE169609/seurat_markers.csv
+    log: logs/generate_markers.UVM_GSE169609log (check log file(s) for error details)
+    conda-env: seurat_analysis
+    shell:
+        Rscript ../scripts/generate_markers.R  ../results/UVM_GSE169609/seurat_object.rds ../results/UVM_GSE169609/seurat_markers.csv --log logs/generate_markers.UVM_GSE169609log
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-02-22T170428.669869.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

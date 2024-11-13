@@ -1,0 +1,231 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                 count
+----------------  -------
+all                     1
+generate_markers        6
+generate_vlnplot        6
+total                  13
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:10:10 2024]
+localrule generate_vlnplot:
+    input: ../data/CRC_GSE136394_expression.h5
+    output: ../results/CRC_GSE136394/vlnplot.png, ../results/CRC_GSE136394/seurat_object.rds
+    log: logs/generate_vlnplot..CRC_GSE136394.loglogs/seurat_obj.CRC_GSE136394.log
+    jobid: 6
+    reason: Missing output files: ../results/CRC_GSE136394/seurat_object.rds, ../results/CRC_GSE136394/vlnplot.png
+    wildcards: dataset=CRC_GSE136394
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_vlnplot.R ../data/CRC_GSE136394_expression.h5 ../results/CRC_GSE136394/vlnplot.png ../results/CRC_GSE136394/seurat_object.rds CRC_GSE136394 --log logs/generate_vlnplot..CRC_GSE136394.loglogs/seurat_obj.CRC_GSE136394.log
+[Thu Feb 22 12:23:16 2024]
+Finished job 6.
+1 of 13 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:23:16 2024]
+localrule generate_vlnplot:
+    input: ../data/CRC_EMTAB8107_expression.h5
+    output: ../results/CRC_EMTAB8107/vlnplot.png, ../results/CRC_EMTAB8107/seurat_object.rds
+    log: logs/generate_vlnplot..CRC_EMTAB8107.loglogs/seurat_obj.CRC_EMTAB8107.log
+    jobid: 4
+    reason: Missing output files: ../results/CRC_EMTAB8107/vlnplot.png, ../results/CRC_EMTAB8107/seurat_object.rds
+    wildcards: dataset=CRC_EMTAB8107
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_vlnplot.R ../data/CRC_EMTAB8107_expression.h5 ../results/CRC_EMTAB8107/vlnplot.png ../results/CRC_EMTAB8107/seurat_object.rds CRC_EMTAB8107 --log logs/generate_vlnplot..CRC_EMTAB8107.loglogs/seurat_obj.CRC_EMTAB8107.log
+[Thu Feb 22 12:28:31 2024]
+Finished job 4.
+2 of 13 steps (15%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:28:31 2024]
+localrule generate_vlnplot:
+    input: ../data/BLCA_GSE149652_expression.h5
+    output: ../results/BLCA_GSE149652/vlnplot.png, ../results/BLCA_GSE149652/seurat_object.rds
+    log: logs/generate_vlnplot..BLCA_GSE149652.loglogs/seurat_obj.BLCA_GSE149652.log
+    jobid: 1
+    reason: Missing output files: ../results/BLCA_GSE149652/seurat_object.rds, ../results/BLCA_GSE149652/vlnplot.png; Code has changed since last execution; Software environment definition has changed since last execution
+    wildcards: dataset=BLCA_GSE149652
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_vlnplot.R ../data/BLCA_GSE149652_expression.h5 ../results/BLCA_GSE149652/vlnplot.png ../results/BLCA_GSE149652/seurat_object.rds BLCA_GSE149652 --log logs/generate_vlnplot..BLCA_GSE149652.loglogs/seurat_obj.BLCA_GSE149652.log
+[Thu Feb 22 12:29:36 2024]
+Finished job 1.
+3 of 13 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:29:36 2024]
+localrule generate_markers:
+    input: ../results/BLCA_GSE149652/seurat_object.rds
+    output: ../results/BLCA_GSE149652/seurat_markers.csv
+    log: logs/generate_markers.BLCA_GSE149652log
+    jobid: 7
+    reason: Missing output files: ../results/BLCA_GSE149652/seurat_markers.csv; Input files updated by another job: ../results/BLCA_GSE149652/seurat_object.rds
+    wildcards: dataset=BLCA_GSE149652
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_markers.R  ../results/BLCA_GSE149652/seurat_object.rds ../results/BLCA_GSE149652/seurat_markers.csv --log logs/generate_markers.BLCA_GSE149652log
+[Thu Feb 22 12:31:37 2024]
+Finished job 7.
+4 of 13 steps (31%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:31:37 2024]
+localrule generate_vlnplot:
+    input: ../data/BLCA_GSE130001_expression.h5
+    output: ../results/BLCA_GSE130001/vlnplot.png, ../results/BLCA_GSE130001/seurat_object.rds
+    log: logs/generate_vlnplot..BLCA_GSE130001.loglogs/seurat_obj.BLCA_GSE130001.log
+    jobid: 2
+    reason: Missing output files: ../results/BLCA_GSE130001/vlnplot.png, ../results/BLCA_GSE130001/seurat_object.rds; Code has changed since last execution; Software environment definition has changed since last execution
+    wildcards: dataset=BLCA_GSE130001
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_vlnplot.R ../data/BLCA_GSE130001_expression.h5 ../results/BLCA_GSE130001/vlnplot.png ../results/BLCA_GSE130001/seurat_object.rds BLCA_GSE130001 --log logs/generate_vlnplot..BLCA_GSE130001.loglogs/seurat_obj.BLCA_GSE130001.log
+[Thu Feb 22 12:32:11 2024]
+Finished job 2.
+5 of 13 steps (38%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:32:11 2024]
+localrule generate_vlnplot:
+    input: ../data/BLCA_GSE145281_aPDL1_expression.h5
+    output: ../results/BLCA_GSE145281_aPDL1/vlnplot.png, ../results/BLCA_GSE145281_aPDL1/seurat_object.rds
+    log: logs/generate_vlnplot..BLCA_GSE145281_aPDL1.loglogs/seurat_obj.BLCA_GSE145281_aPDL1.log
+    jobid: 3
+    reason: Missing output files: ../results/BLCA_GSE145281_aPDL1/seurat_object.rds, ../results/BLCA_GSE145281_aPDL1/vlnplot.png; Code has changed since last execution; Software environment definition has changed since last execution
+    wildcards: dataset=BLCA_GSE145281_aPDL1
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_vlnplot.R ../data/BLCA_GSE145281_aPDL1_expression.h5 ../results/BLCA_GSE145281_aPDL1/vlnplot.png ../results/BLCA_GSE145281_aPDL1/seurat_object.rds BLCA_GSE145281_aPDL1 --log logs/generate_vlnplot..BLCA_GSE145281_aPDL1.loglogs/seurat_obj.BLCA_GSE145281_aPDL1.log
+[Thu Feb 22 12:33:16 2024]
+Finished job 3.
+6 of 13 steps (46%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:33:16 2024]
+localrule generate_markers:
+    input: ../results/BLCA_GSE145281_aPDL1/seurat_object.rds
+    output: ../results/BLCA_GSE145281_aPDL1/seurat_markers.csv
+    log: logs/generate_markers.BLCA_GSE145281_aPDL1log
+    jobid: 9
+    reason: Missing output files: ../results/BLCA_GSE145281_aPDL1/seurat_markers.csv; Input files updated by another job: ../results/BLCA_GSE145281_aPDL1/seurat_object.rds
+    wildcards: dataset=BLCA_GSE145281_aPDL1
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_markers.R  ../results/BLCA_GSE145281_aPDL1/seurat_object.rds ../results/BLCA_GSE145281_aPDL1/seurat_markers.csv --log logs/generate_markers.BLCA_GSE145281_aPDL1log
+[Thu Feb 22 12:35:20 2024]
+Finished job 9.
+7 of 13 steps (54%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:35:20 2024]
+localrule generate_vlnplot:
+    input: ../data/CRC_GSE108989_expression.h5
+    output: ../results/CRC_GSE108989/vlnplot.png, ../results/CRC_GSE108989/seurat_object.rds
+    log: logs/generate_vlnplot..CRC_GSE108989.loglogs/seurat_obj.CRC_GSE108989.log
+    jobid: 5
+    reason: Missing output files: ../results/CRC_GSE108989/vlnplot.png, ../results/CRC_GSE108989/seurat_object.rds
+    wildcards: dataset=CRC_GSE108989
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_vlnplot.R ../data/CRC_GSE108989_expression.h5 ../results/CRC_GSE108989/vlnplot.png ../results/CRC_GSE108989/seurat_object.rds CRC_GSE108989 --log logs/generate_vlnplot..CRC_GSE108989.loglogs/seurat_obj.CRC_GSE108989.log
+[Thu Feb 22 12:36:53 2024]
+Finished job 5.
+8 of 13 steps (62%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:36:53 2024]
+localrule generate_markers:
+    input: ../results/CRC_GSE136394/seurat_object.rds
+    output: ../results/CRC_GSE136394/seurat_markers.csv
+    log: logs/generate_markers.CRC_GSE136394log
+    jobid: 12
+    reason: Missing output files: ../results/CRC_GSE136394/seurat_markers.csv; Input files updated by another job: ../results/CRC_GSE136394/seurat_object.rds
+    wildcards: dataset=CRC_GSE136394
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_markers.R  ../results/CRC_GSE136394/seurat_object.rds ../results/CRC_GSE136394/seurat_markers.csv --log logs/generate_markers.CRC_GSE136394log
+[Thu Feb 22 12:44:16 2024]
+Finished job 12.
+9 of 13 steps (69%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:44:16 2024]
+localrule generate_markers:
+    input: ../results/CRC_EMTAB8107/seurat_object.rds
+    output: ../results/CRC_EMTAB8107/seurat_markers.csv
+    log: logs/generate_markers.CRC_EMTAB8107log
+    jobid: 10
+    reason: Missing output files: ../results/CRC_EMTAB8107/seurat_markers.csv; Input files updated by another job: ../results/CRC_EMTAB8107/seurat_object.rds
+    wildcards: dataset=CRC_EMTAB8107
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_markers.R  ../results/CRC_EMTAB8107/seurat_object.rds ../results/CRC_EMTAB8107/seurat_markers.csv --log logs/generate_markers.CRC_EMTAB8107log
+[Thu Feb 22 12:48:34 2024]
+Finished job 10.
+10 of 13 steps (77%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:48:34 2024]
+localrule generate_markers:
+    input: ../results/CRC_GSE108989/seurat_object.rds
+    output: ../results/CRC_GSE108989/seurat_markers.csv
+    log: logs/generate_markers.CRC_GSE108989log
+    jobid: 11
+    reason: Missing output files: ../results/CRC_GSE108989/seurat_markers.csv; Input files updated by another job: ../results/CRC_GSE108989/seurat_object.rds
+    wildcards: dataset=CRC_GSE108989
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_markers.R  ../results/CRC_GSE108989/seurat_object.rds ../results/CRC_GSE108989/seurat_markers.csv --log logs/generate_markers.CRC_GSE108989log
+[Thu Feb 22 12:49:02 2024]
+Finished job 11.
+11 of 13 steps (85%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:49:02 2024]
+localrule generate_markers:
+    input: ../results/BLCA_GSE130001/seurat_object.rds
+    output: ../results/BLCA_GSE130001/seurat_markers.csv
+    log: logs/generate_markers.BLCA_GSE130001log
+    jobid: 8
+    reason: Missing output files: ../results/BLCA_GSE130001/seurat_markers.csv; Input files updated by another job: ../results/BLCA_GSE130001/seurat_object.rds
+    wildcards: dataset=BLCA_GSE130001
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_markers.R  ../results/BLCA_GSE130001/seurat_object.rds ../results/BLCA_GSE130001/seurat_markers.csv --log logs/generate_markers.BLCA_GSE130001log
+[Thu Feb 22 12:49:29 2024]
+Finished job 8.
+12 of 13 steps (92%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 12:49:29 2024]
+localrule all:
+    input: ../results/BLCA_GSE149652/vlnplot.png, ../results/BLCA_GSE130001/vlnplot.png, ../results/BLCA_GSE145281_aPDL1/vlnplot.png, ../results/CRC_EMTAB8107/vlnplot.png, ../results/CRC_GSE108989/vlnplot.png, ../results/CRC_GSE136394/vlnplot.png, ../results/BLCA_GSE149652/seurat_markers.csv, ../results/BLCA_GSE130001/seurat_markers.csv, ../results/BLCA_GSE145281_aPDL1/seurat_markers.csv, ../results/CRC_EMTAB8107/seurat_markers.csv, ../results/CRC_GSE108989/seurat_markers.csv, ../results/CRC_GSE136394/seurat_markers.csv
+    jobid: 0
+    reason: Input files updated by another job: ../results/BLCA_GSE130001/vlnplot.png, ../results/CRC_EMTAB8107/vlnplot.png, ../results/BLCA_GSE145281_aPDL1/vlnplot.png, ../results/CRC_GSE108989/vlnplot.png, ../results/BLCA_GSE130001/seurat_markers.csv, ../results/BLCA_GSE149652/vlnplot.png, ../results/BLCA_GSE149652/seurat_markers.csv, ../results/CRC_EMTAB8107/seurat_markers.csv, ../results/CRC_GSE108989/seurat_markers.csv, ../results/CRC_GSE136394/vlnplot.png, ../results/CRC_GSE136394/seurat_markers.csv, ../results/BLCA_GSE145281_aPDL1/seurat_markers.csv
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+[Thu Feb 22 12:49:29 2024]
+Finished job 0.
+13 of 13 steps (100%) done
+Complete log: .snakemake/log/2024-02-22T121009.312961.snakemake.log

@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                 count
+----------------  -------
+all                     1
+generate_markers        6
+generate_vlnplot        6
+total                  13
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 11:12:50 2024]
+localrule generate_vlnplot:
+    input: ../data/CRC_GSE136394_expression.h5
+    output: ../results/CRC_GSE136394/vlnplot.png, ../results/CRC_GSE136394/seurat_object.rds
+    log: logs/generate_vlnplot..CRC_GSE136394.loglogs/seurat_obj.CRC_GSE136394.log
+    jobid: 6
+    reason: Missing output files: ../results/CRC_GSE136394/vlnplot.png, ../results/CRC_GSE136394/seurat_object.rds
+    wildcards: dataset=CRC_GSE136394
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_vlnplot.R --log logs/generate_vlnplot..CRC_GSE136394.loglogs/seurat_obj.CRC_GSE136394.log ../data/CRC_GSE136394_expression.h5 ../results/CRC_GSE136394/vlnplot.png ../results/CRC_GSE136394/seurat_object.rds CRC_GSE136394
+[Thu Feb 22 11:12:57 2024]
+Error in rule generate_vlnplot:
+    jobid: 6
+    input: ../data/CRC_GSE136394_expression.h5
+    output: ../results/CRC_GSE136394/vlnplot.png, ../results/CRC_GSE136394/seurat_object.rds
+    log: logs/generate_vlnplot..CRC_GSE136394.loglogs/seurat_obj.CRC_GSE136394.log (check log file(s) for error details)
+    conda-env: /Users/pritam/Desktop/snakemake/workflow/.snakemake/conda/7c82cda38849ed9c91df514e0fc8539a_
+    shell:
+        Rscript ../scripts/generate_vlnplot.R --log logs/generate_vlnplot..CRC_GSE136394.loglogs/seurat_obj.CRC_GSE136394.log ../data/CRC_GSE136394_expression.h5 ../results/CRC_GSE136394/vlnplot.png ../results/CRC_GSE136394/seurat_object.rds CRC_GSE136394
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-02-22T111250.743450.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

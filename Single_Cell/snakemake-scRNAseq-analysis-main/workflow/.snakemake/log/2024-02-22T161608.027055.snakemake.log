@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule generate_vlnplot in file /Users/pritam/Desktop/snakemake/workflow/Snakefile, line 26:
+Missing input files for rule generate_vlnplot:
+    output: ../results/LSCC_GSE150321/vlnplot.png, ../results/LSCC_GSE150321/seurat_object.rds
+    wildcards: dataset=LSCC_GSE150321
+    affected files:
+        ../data/LSCC_GSE150321_expression.h5

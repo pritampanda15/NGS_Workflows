@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+all                     1
+generate_markers        6
+generate_vlnplot        6
+total                  13
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Feb 22 11:13:59 2024]
+localrule generate_vlnplot:
+    input: ../data/CRC_EMTAB8107_expression.h5
+    output: ../results/CRC_EMTAB8107/vlnplot.png, ../results/CRC_EMTAB8107/seurat_object.rds
+    log: logs/generate_vlnplot..CRC_EMTAB8107.loglogs/seurat_obj.CRC_EMTAB8107.log
+    jobid: 4
+    reason: Missing output files: ../results/CRC_EMTAB8107/seurat_object.rds, ../results/CRC_EMTAB8107/vlnplot.png
+    wildcards: dataset=CRC_EMTAB8107
+    resources: tmpdir=/var/folders/k5/2sqf38tx6cl7vn0xqg7hckb40000gq/T
+
+Rscript ../scripts/generate_vlnplot.R --log logs/generate_vlnplot..CRC_EMTAB8107.loglogs/seurat_obj.CRC_EMTAB8107.log ../data/CRC_EMTAB8107_expression.h5 ../results/CRC_EMTAB8107/vlnplot.png ../results/CRC_EMTAB8107/seurat_object.rds CRC_EMTAB8107
+[Thu Feb 22 11:14:04 2024]
+Error in rule generate_vlnplot:
+    jobid: 4
+    input: ../data/CRC_EMTAB8107_expression.h5
+    output: ../results/CRC_EMTAB8107/vlnplot.png, ../results/CRC_EMTAB8107/seurat_object.rds
+    log: logs/generate_vlnplot..CRC_EMTAB8107.loglogs/seurat_obj.CRC_EMTAB8107.log (check log file(s) for error details)
+    shell:
+        Rscript ../scripts/generate_vlnplot.R --log logs/generate_vlnplot..CRC_EMTAB8107.loglogs/seurat_obj.CRC_EMTAB8107.log ../data/CRC_EMTAB8107_expression.h5 ../results/CRC_EMTAB8107/vlnplot.png ../results/CRC_EMTAB8107/seurat_object.rds CRC_EMTAB8107
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-02-22T111359.042289.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

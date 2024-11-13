@@ -1,0 +1,365 @@
+
+
+Search on Gene Symbols:
+Generated at:  Generated at 2023-11-09 10:19:27, by pathDip published at October 14, 2023, version 5.0.32.3; Database version 5.0.31.0. 
+IDs:  INO80E,IQCJ-SCHIP1,KCTD13,MAP2K3,MAP2K6,SCAF1,SCHIP1,STK25,TAOK1,TAOK2,TAOK3 
+DataComponent:  Literature curated (core) pathway memberships 
+Sources:  ACSN2,BioCarta,HumanCyc,KEGG,Panther_Pathway,PathBank,PharmGKB,REACTOME,MetabolicAtlas,SIGNOR 3.0,UniProt_Pathways,WikiPathways 
+PathwayTypes:  Cellular processes and organization,Diseases,Drugs and vitamins,Environmental information processing,Genetic information processing,Metabolism,Organismal systems 
+q-value (FDR: BH-method):   < 0.05 
+
+Note: Pathways, where only one ID from the input list was found, were excluded from results.
+
+Summary size:  102 
+Summary: 
+ Pathway Source	Pathway Name	p-value	q-value (FDR: BH-method)	q-value (Bonferroni)	Ratio	Query mapped	Pathway size	Type	Category
+WikiPathways	16p11.2 proximal deletion syndrome	8.29553e-11	9.04213e-09	9.04213e-09	0.71	5	76	Diseases	Neuropsychiatric and neurodevelopmental disorders
+SIGNOR 3.0	P38 Signaling	6.66281e-10	3.63123e-08	7.26246e-08	0.57	4	31	Environmental information processing	Signal transduction
+ACSN2	MAPK	1.33359e-08	4.84538e-07	1.45361e-06	0.71	5	205	Environmental information processing	Signal transduction
+WikiPathways	MAPK signaling pathway	3.23610e-08	8.81837e-07	3.52735e-06	0.71	5	246	Environmental information processing	Signal transduction
+KEGG	MAPK signaling pathway	7.87104e-08	1.71589e-06	8.57943e-06	0.71	5	294	Environmental information processing	Signal transduction
+REACTOME	Uptake and function of anthrax toxins	1.15983e-05	2.10702e-04	1.26421e-03	0.29	2	11	Diseases	Infectious diseases
+BioCarta	BIOCARTA STRESS PATHWAY	5.80244e-05	4.21644e-04	6.32466e-03	0.29	2	24	Cellular processes and organization	Cellular response to stimuli
+BioCarta	BIOCARTA TOLL PATHWAY	6.30557e-05	4.29567e-04	6.87307e-03	0.29	2	25	Organismal systems	Immune system
+SIGNOR 3.0	Toll like receptors	3.22117e-05	4.38884e-04	3.51108e-03	0.29	2	18	Organismal systems	Immune system
+WikiPathways	4-hydroxytamoxifen, dexamethasone, and retinoic acids regulation of p27 expression	3.22117e-05	4.38884e-04	3.51108e-03	0.29	2	18	Drugs and vitamins	Drug action
+BioCarta	BIOCARTA HCMV PATHWAY	2.86391e-05	4.45952e-04	3.12166e-03	0.29	2	17	Diseases	Infectious diseases
+WikiPathways	Vitamin D in inflammatory diseases	4.85859e-05	4.81442e-04	5.29586e-03	0.29	2	22	Diseases	Endocrine and metabolic diseases
+SIGNOR 3.0	TGF-beta Signaling	4.41800e-05	4.81562e-04	4.81562e-03	0.29	2	21	Environmental information processing	Signal transduction
+BioCarta	BIOCARTA NTHI PATHWAY	5.32011e-05	4.83243e-04	5.79892e-03	0.29	2	23	Diseases	Infectious diseases
+PathBank	TNF/Stress Related Signaling	5.32011e-05	4.83243e-04	5.79892e-03	0.29	2	23	Cellular processes and organization	Cellular response to stimuli
+REACTOME	activated TAK1 mediates p38 MAPK activation	5.32011e-05	4.83243e-04	5.79892e-03	0.29	2	23	Organismal systems	Immune system
+BioCarta	BIOCARTA IL1R PATHWAY	9.75967e-05	5.59897e-04	1.06380e-02	0.29	2	31	Organismal systems	Immune system
+BioCarta	BIOCARTA FMLP PATHWAY	1.17663e-04	5.82967e-04	1.28253e-02	0.29	2	34	Organismal systems	Immune system
+PathBank	Toll-Like Receptor Pathway 1	1.17663e-04	5.82967e-04	1.28253e-02	0.29	2	34	Organismal systems	Immune system
+REACTOME	Uptake and actions of bacterial toxins	9.13209e-05	5.85528e-04	9.95398e-03	0.29	2	30	Diseases	Infectious diseases
+SIGNOR 3.0	P38 Signaling and Myogenesis	9.13209e-05	5.85528e-04	9.95398e-03	0.29	2	30	Organismal systems	Development and regeneration
+WikiPathways	MAPK cascade	1.10767e-04	6.03680e-04	1.20736e-02	0.29	2	33	Environmental information processing	Signal transduction
+WikiPathways	Signal transduction through IL1R	1.10767e-04	6.03680e-04	1.20736e-02	0.29	2	33	Organismal systems	Immune system
+WikiPathways	Host-pathogen interaction of human coronaviruses - MAPK signaling	1.39584e-04	6.33944e-04	1.52147e-02	0.29	2	36	Diseases	Infectious diseases
+WikiPathways	Serotonin HTR1 group and FOS pathway	1.39584e-04	6.33944e-04	1.52147e-02	0.29	2	37	Organismal systems	Nervous system
+PathBank	Fc Epsilon Receptor I Signaling in Mast Cells	1.80241e-04	7.55626e-04	1.96463e-02	0.29	2	42	Organismal systems	Immune system
+PharmGKB	Tacrolimus Cyclosporine Pathway Pharmacodynamics	1.97941e-04	7.99095e-04	2.15756e-02	0.29	2	44	Drugs and vitamins	Drug action
+BioCarta	BIOCARTA KERATINOCYTE PATHWAY	2.16460e-04	8.42648e-04	2.35941e-02	0.29	2	46	Organismal systems	Development and regeneration
+Panther_Pathway	Oxidative stress response	2.16460e-04	8.42648e-04	2.35941e-02	0.29	2	46	Cellular processes and organization	Cellular response to stimuli
+WikiPathways	Translation inhibitors in chronically activated PDGFRA cells	2.16460e-04	8.42648e-04	2.35941e-02	0.29	2	46	Environmental information processing	Signal transduction
+WikiPathways	Interleukin-1 (IL-1) structural pathway	2.45776e-04	8.64180e-04	2.67896e-02	0.29	2	49	Organismal systems	Immune system
+WikiPathways	Photodynamic therapy-induced AP-1 survival signaling	2.76931e-04	9.43296e-04	3.01855e-02	0.29	2	51	Cellular processes and organization	Cellular response to stimuli
+WikiPathways	IL-1 signaling pathway	3.09913e-04	9.65158e-04	3.37805e-02	0.29	2	55	Organismal systems	Immune system
+WikiPathways	Cardiac hypertrophic response	2.98711e-04	9.86651e-04	3.25595e-02	0.29	2	54	Diseases	Cardiovascular diseases
+WikiPathways	Interferon type I signaling pathways	2.98711e-04	9.86651e-04	3.25595e-02	0.29	2	54	Organismal systems	Immune system
+PharmGKB	VEGF Signaling Pathway	3.81378e-04	1.15473e-03	4.15702e-02	0.29	2	61	Environmental information processing	Signal transduction
+REACTOME	MAP kinase activation	4.06818e-04	1.19846e-03	4.43432e-02	0.29	2	63	Organismal systems	Immune system
+KEGG	Fc epsilon RI signaling pathway	4.60113e-04	1.31980e-03	5.01523e-02	0.29	2	67	Organismal systems	Immune system
+Panther_Pathway	Ras Pathway	4.87986e-04	1.36386e-03	5.31905e-02	0.29	2	69	Environmental information processing	Signal transduction
+WikiPathways	Thyroid stimulating hormone (TSH) signaling pathway	4.87986e-04	1.36386e-03	5.31905e-02	0.29	2	66	Organismal systems	Endocrine system
+REACTOME	Interleukin-17 signaling	5.16642e-04	1.37351e-03	5.63140e-02	0.29	2	71	Organismal systems	Immune system
+REACTOME	Bacterial Infection Pathways	5.46126e-04	1.41733e-03	5.95277e-02	0.29	2	73	Diseases	Infectious diseases
+BioCarta	BIOCARTA MAPK PATHWAY	6.72030e-04	1.70352e-03	7.32513e-02	0.29	2	81	Environmental information processing	Signal transduction
+WikiPathways	Glioblastoma signaling pathways	7.22532e-04	1.78991e-03	7.87560e-02	0.29	2	83	Diseases	Cancer
+KEGG	PD-L1 expression and PD-1 checkpoint pathway in cancer	8.10705e-04	1.96371e-03	8.83668e-02	0.29	2	89	Diseases	Cancer
+REACTOME	Toll Like Receptor 9 (TLR9) Cascade	1.14742e-03	1.98522e-03	1.25069e-01	0.29	2	106	Organismal systems	Immune system
+REACTOME	Toll Like Receptor 7/8 (TLR7/8) Cascade	1.08387e-03	2.00240e-03	1.18142e-01	0.29	2	103	Organismal systems	Immune system
+Panther_Pathway	FGF signaling pathway	1.10488e-03	2.00720e-03	1.20432e-01	0.29	2	104	Environmental information processing	Signal transduction
+REACTOME	Toll Like Receptor 3 (TLR3) Cascade	1.10488e-03	2.00720e-03	1.20432e-01	0.29	2	104	Organismal systems	Immune system
+WikiPathways	MicroRNAs in cardiomyocyte hypertrophy	1.10488e-03	2.00720e-03	1.20432e-01	0.29	2	104	Diseases	Cardiovascular diseases
+KEGG	Toxoplasmosis	1.19080e-03	2.02808e-03	1.29797e-01	0.29	2	108	Diseases	Infectious diseases
+REACTOME	MyD88-independent TLR4 cascade	1.19080e-03	2.02808e-03	1.29797e-01	0.29	2	108	Organismal systems	Immune system
+REACTOME	TRIF(TICAM1)-mediated TLR4 signaling	1.19080e-03	2.02808e-03	1.29797e-01	0.29	2	108	Organismal systems	Immune system
+WikiPathways	Embryonic stem cell pluripotency pathways	1.37201e-03	2.04862e-03	1.49549e-01	0.29	2	116	Cellular processes and organization	Cellular community
+REACTOME	Oxidative Stress Induced Senescence	8.84788e-04	2.05196e-03	9.64419e-02	0.29	2	92	Cellular processes and organization	Cell growth and death
+WikiPathways	TNF-alpha signaling pathway	8.65976e-04	2.05199e-03	9.43914e-02	0.29	2	92	Environmental information processing	Signal transduction
+Panther_Pathway	EGF receptor signaling pathway	1.32553e-03	2.06404e-03	1.44483e-01	0.29	2	114	Environmental information processing	Signal transduction
+REACTOME	MyD88 dependent cascade initiated on endosome	1.06309e-03	2.06923e-03	1.15877e-01	0.29	2	102	Organismal systems	Immune system
+WikiPathways	Integrin-mediated cell adhesion	1.06309e-03	2.06923e-03	1.15877e-01	0.29	2	102	Cellular processes and organization	Cellular community
+WikiPathways	Toll-like receptor signaling pathway	1.06309e-03	2.06923e-03	1.15877e-01	0.29	2	102	Organismal systems	Immune system
+REACTOME	Toll Like Receptor 2 (TLR2) Cascade	1.34868e-03	2.07051e-03	1.47006e-01	0.29	2	115	Organismal systems	Immune system
+REACTOME	Toll Like Receptor TLR1:TLR2 Cascade	1.34868e-03	2.07051e-03	1.47006e-01	0.29	2	115	Organismal systems	Immune system
+WikiPathways	VEGFA-VEGFR2 signaling	9.12210e-04	2.07148e-03	9.94309e-02	0.43	3	432	Environmental information processing	Signal transduction
+KEGG	TNF signaling pathway	1.27986e-03	2.08216e-03	1.39505e-01	0.29	2	112	Environmental information processing	Signal transduction
+REACTOME	MyD88:MAL(TIRAP) cascade initiated on plasma membrane	1.27986e-03	2.08216e-03	1.39505e-01	0.29	2	112	Organismal systems	Immune system
+REACTOME	Toll Like Receptor TLR6:TLR2 Cascade	1.27986e-03	2.08216e-03	1.39505e-01	0.29	2	112	Organismal systems	Immune system
+KEGG	GnRH signaling pathway	9.42454e-04	2.09648e-03	1.02727e-01	0.29	2	93	Organismal systems	Endocrine system
+REACTOME	MyD88 cascade initiated on plasma membrane	9.42454e-04	2.09648e-03	1.02727e-01	0.29	2	96	Organismal systems	Immune system
+REACTOME	Toll Like Receptor 10 (TLR10) Cascade	9.42454e-04	2.09648e-03	1.02727e-01	0.29	2	96	Organismal systems	Immune system
+REACTOME	Toll Like Receptor 5 (TLR5) Cascade	9.42454e-04	2.09648e-03	1.02727e-01	0.29	2	96	Organismal systems	Immune system
+KEGG	Inflammatory mediator regulation of TRP channels	1.04250e-03	2.14401e-03	1.13633e-01	0.29	2	98	Organismal systems	Sensory system
+KEGG	Toll-like receptor signaling pathway	1.04250e-03	2.14401e-03	1.13633e-01	0.29	2	101	Organismal systems	Immune system
+REACTOME	TRAF6 mediated induction of NFkB and MAP kinases upon TLR7/8 or 9 activation	1.04250e-03	2.14401e-03	1.13633e-01	0.29	2	101	Organismal systems	Immune system
+KEGG	Growth hormone synthesis, secretion and action	1.51611e-03	2.23319e-03	1.65256e-01	0.29	2	119	Organismal systems	Endocrine system
+WikiPathways	Angiopoietin-like protein 8 regulatory pathway	1.77176e-03	2.57496e-03	1.93122e-01	0.29	2	132	Organismal systems	Digestive system
+WikiPathways	TGF-beta signaling pathway	1.77176e-03	2.57496e-03	1.93122e-01	0.29	2	132	Environmental information processing	Signal transduction
+KEGG	Yersinia infection	1.87941e-03	2.66046e-03	2.04856e-01	0.29	2	136	Diseases	Infectious diseases
+REACTOME	Toll Like Receptor 4 (TLR4) Cascade	2.10386e-03	2.94001e-03	2.29321e-01	0.29	2	144	Organismal systems	Immune system
+WikiPathways	Hepatitis B infection	2.28025e-03	3.14617e-03	2.48547e-01	0.29	2	150	Diseases	Infectious diseases
+ACSN2	CASPASES	2.37098e-03	3.23046e-03	2.58437e-01	0.29	2	152	Cellular processes and organization	Cell growth and death
+KEGG	Cellular senescence	2.37098e-03	3.23046e-03	2.58437e-01	0.29	2	152	Cellular processes and organization	Cell growth and death
+WikiPathways	Insulin signaling	2.58934e-03	3.44193e-03	2.82238e-01	0.29	2	160	Organismal systems	Endocrine system
+KEGG	Hepatitis B	2.62132e-03	3.44246e-03	2.85724e-01	0.29	2	161	Diseases	Infectious diseases
+WikiPathways	Epithelial to mesenchymal transition in colorectal cancer	2.62132e-03	3.44246e-03	2.85724e-01	0.29	2	161	Diseases	Cancer
+REACTOME	Cellular Senescence	2.75095e-03	3.52769e-03	2.99854e-01	0.29	2	164	Cellular processes and organization	Cell growth and death
+REACTOME	Toll-like Receptor Cascades	2.78381e-03	3.52832e-03	3.03435e-01	0.29	2	166	Organismal systems	Immune system
+REACTOME	Signaling by Rho GTPases	3.28063e-03	4.11021e-03	3.57589e-01	0.43	3	673	Environmental information processing	Signal transduction
+REACTOME	Signaling by Rho GTPases, Miro GTPases and RHOBTB3	3.50828e-03	4.34548e-03	3.82403e-01	0.43	3	689	Environmental information processing	Signal transduction
+KEGG	Epstein-Barr virus infection	3.70432e-03	4.53675e-03	4.03771e-01	0.29	2	191	Diseases	Infectious diseases
+ACSN2	TCR SIGNALING	3.97350e-03	4.81235e-03	4.33112e-01	0.29	2	199	Organismal systems	Immune system
+KEGG	Human immunodeficiency virus 1 infection	4.25155e-03	5.09252e-03	4.63419e-01	0.29	2	206	Diseases	Infectious diseases
+KEGG	Lipid and atherosclerosis	4.58031e-03	5.36832e-03	4.99254e-01	0.29	2	213	Diseases	Cardiovascular diseases
+KEGG	Rap1 signaling pathway	4.53852e-03	5.37716e-03	4.94699e-01	0.29	2	210	Environmental information processing	Signal transduction
+ACSN2	APOPTOSIS	5.13923e-03	5.95932e-03	5.60176e-01	0.29	2	226	Cellular processes and organization	Cell growth and death
+KEGG	Salmonella infection	6.15362e-03	7.06047e-03	6.70745e-01	0.29	2	249	Diseases	Infectious diseases
+ACSN2	DEATH RECEPTOR PATHWAYS	6.44518e-03	7.31796e-03	7.02525e-01	0.29	2	255	Environmental information processing	Signal transduction
+KEGG	Amyotrophic lateral sclerosis	1.27440e-02	1.43206e-02	1.00000e+00	0.29	2	361	Diseases	Neuropsychiatric and neurodevelopmental disorders
+WikiPathways	Malignant pleural mesothelioma	1.85511e-02	2.06334e-02	1.00000e+00	0.29	2	439	Diseases	Cancer
+REACTOME	RHO GTPase cycle	1.91929e-02	2.11316e-02	1.00000e+00	0.29	2	450	Environmental information processing	Signal transduction
+REACTOME	Signaling by Interleukins	2.00908e-02	2.18990e-02	1.00000e+00	0.29	2	461	Organismal systems	Immune system
+KEGG	Pathways of neurodegeneration - multiple diseases	2.12598e-02	2.29437e-02	1.00000e+00	0.29	2	472	Diseases	Neuropsychiatric and neurodevelopmental disorders
+REACTOME	Cytokine Signaling in Immune system	4.62108e-02	4.93821e-02	1.00000e+00	0.29	2	721	Organismal systems	Immune system
+
+Note:
+ - IDs ratio is 'IDs ratio is the number of proteins annotated with one pathway divided by the number of proteins annotated with any pathway'.
+ - Query mapped is 'Number of annotated proteins in that pathway'.
+ - Pathway size is 'total number of proteins in the pathway.
+ 
+
+Details size:  236 
+Details: 
+ UniProt	Gene Symbol	Entrez Gene	Pathway Source	Pathway Name	TYPE	CATEGORY
+Q8NBZ0	INO80E	283899	WikiPathways	16p11.2 proximal deletion syndrome	Diseases	Neuropsychiatric and neurodevelopmental disorders
+Q8WZ19	KCTD13	253980	REACTOME	Signal Transduction	Environmental information processing	Signal transduction
+Q8WZ19	KCTD13	253980	REACTOME	Signaling by Rho GTPases	Environmental information processing	Signal transduction
+Q8WZ19	KCTD13	253980	REACTOME	RHO GTPase cycle	Environmental information processing	Signal transduction
+Q8WZ19	KCTD13	253980	REACTOME	Signaling by Rho GTPases, Miro GTPases and RHOBTB3	Environmental information processing	Signal transduction
+Q8WZ19	KCTD13	253980	WikiPathways	16p11.2 proximal deletion syndrome	Diseases	Neuropsychiatric and neurodevelopmental disorders
+P46734	MAP2K3	5606	ACSN2	TCR SIGNALING	Organismal systems	Immune system
+P46734	MAP2K3	5606	ACSN2	APOPTOSIS	Cellular processes and organization	Cell growth and death
+P46734	MAP2K3	5606	ACSN2	DEATH RECEPTOR PATHWAYS	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	ACSN2	CASPASES	Cellular processes and organization	Cell growth and death
+P46734	MAP2K3	5606	ACSN2	MAPK	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	BioCarta	BIOCARTA FMLP PATHWAY	Organismal systems	Immune system
+P46734	MAP2K3	5606	BioCarta	BIOCARTA HCMV PATHWAY	Diseases	Infectious diseases
+P46734	MAP2K3	5606	BioCarta	BIOCARTA KERATINOCYTE PATHWAY	Organismal systems	Development and regeneration
+P46734	MAP2K3	5606	BioCarta	BIOCARTA MAPK PATHWAY	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	BioCarta	BIOCARTA NTHI PATHWAY	Diseases	Infectious diseases
+P46734	MAP2K3	5606	BioCarta	BIOCARTA IL1R PATHWAY	Organismal systems	Immune system
+P46734	MAP2K3	5606	BioCarta	BIOCARTA STRESS PATHWAY	Cellular processes and organization	Cellular response to stimuli
+P46734	MAP2K3	5606	BioCarta	BIOCARTA TOLL PATHWAY	Organismal systems	Immune system
+P46734	MAP2K3	5606	KEGG	Pathways of neurodegeneration - multiple diseases	Diseases	Neuropsychiatric and neurodevelopmental disorders
+P46734	MAP2K3	5606	KEGG	Inflammatory mediator regulation of TRP channels	Organismal systems	Sensory system
+P46734	MAP2K3	5606	KEGG	Fc epsilon RI signaling pathway	Organismal systems	Immune system
+P46734	MAP2K3	5606	KEGG	Salmonella infection	Diseases	Infectious diseases
+P46734	MAP2K3	5606	KEGG	Yersinia infection	Diseases	Infectious diseases
+P46734	MAP2K3	5606	KEGG	PD-L1 expression and PD-1 checkpoint pathway in cancer	Diseases	Cancer
+P46734	MAP2K3	5606	KEGG	Growth hormone synthesis, secretion and action	Organismal systems	Endocrine system
+P46734	MAP2K3	5606	KEGG	GnRH signaling pathway	Organismal systems	Endocrine system
+P46734	MAP2K3	5606	KEGG	Amyotrophic lateral sclerosis	Diseases	Neuropsychiatric and neurodevelopmental disorders
+P46734	MAP2K3	5606	KEGG	TNF signaling pathway	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	KEGG	Lipid and atherosclerosis	Diseases	Cardiovascular diseases
+P46734	MAP2K3	5606	KEGG	Rap1 signaling pathway	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	KEGG	MAPK signaling pathway	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	KEGG	Toxoplasmosis	Diseases	Infectious diseases
+P46734	MAP2K3	5606	KEGG	Toll-like receptor signaling pathway	Organismal systems	Immune system
+P46734	MAP2K3	5606	KEGG	Human immunodeficiency virus 1 infection	Diseases	Infectious diseases
+P46734	MAP2K3	5606	KEGG	Cellular senescence	Cellular processes and organization	Cell growth and death
+P46734	MAP2K3	5606	KEGG	Epstein-Barr virus infection	Diseases	Infectious diseases
+P46734	MAP2K3	5606	KEGG	Hepatitis B	Diseases	Infectious diseases
+P46734	MAP2K3	5606	Panther_Pathway	EGF receptor signaling pathway	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	Panther_Pathway	FGF signaling pathway	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	Panther_Pathway	Oxidative stress response	Cellular processes and organization	Cellular response to stimuli
+P46734	MAP2K3	5606	Panther_Pathway	Ras Pathway	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	PharmGKB	Tacrolimus Cyclosporine Pathway Pharmacodynamics	Drugs and vitamins	Drug action
+P46734	MAP2K3	5606	PharmGKB	VEGF Signaling Pathway	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	REACTOME	Disease	Diseases	Diseases
+P46734	MAP2K3	5606	REACTOME	Uptake and function of anthrax toxins	Diseases	Infectious diseases
+P46734	MAP2K3	5606	REACTOME	Uptake and actions of bacterial toxins	Diseases	Infectious diseases
+P46734	MAP2K3	5606	REACTOME	Infectious disease	Diseases	Infectious diseases
+P46734	MAP2K3	5606	REACTOME	Bacterial Infection Pathways	Diseases	Infectious diseases
+P46734	MAP2K3	5606	REACTOME	Cytokine Signaling in Immune system	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Toll Like Receptor 4 (TLR4) Cascade	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	MyD88:MAL(TIRAP) cascade initiated on plasma membrane	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	MyD88-independent TLR4 cascade	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Toll Like Receptor 9 (TLR9) Cascade	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Toll Like Receptor 10 (TLR10) Cascade	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Toll Like Receptor 3 (TLR3) Cascade	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Toll Like Receptor 5 (TLR5) Cascade	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Toll Like Receptor TLR1:TLR2 Cascade	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Toll Like Receptor 7/8 (TLR7/8) Cascade	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Toll Like Receptor TLR6:TLR2 Cascade	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Innate Immune System	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Immune System	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Toll-like Receptor Cascades	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Toll Like Receptor 2 (TLR2) Cascade	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Cellular responses to stress	Cellular processes and organization	Cellular response to stimuli
+P46734	MAP2K3	5606	REACTOME	Oxidative Stress Induced Senescence	Cellular processes and organization	Cell growth and death
+P46734	MAP2K3	5606	REACTOME	Cellular Senescence	Cellular processes and organization	Cell growth and death
+P46734	MAP2K3	5606	REACTOME	Interleukin-17 signaling	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Signaling by Interleukins	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	MAP kinase activation	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	activated TAK1 mediates p38 MAPK activation	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	Cellular responses to stimuli	Cellular processes and organization	Cellular response to stimuli
+P46734	MAP2K3	5606	REACTOME	TRIF(TICAM1)-mediated TLR4 signaling	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	TRAF6 mediated induction of NFkB and MAP kinases upon TLR7/8 or 9 activation	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	MyD88 dependent cascade initiated on endosome	Organismal systems	Immune system
+P46734	MAP2K3	5606	REACTOME	MyD88 cascade initiated on plasma membrane	Organismal systems	Immune system
+P46734	MAP2K3	5606	SIGNOR 3.0	P38 Signaling	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	SIGNOR 3.0	P38 Signaling and Myogenesis	Organismal systems	Development and regeneration
+P46734	MAP2K3	5606	SIGNOR 3.0	TGF-beta Signaling	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	SIGNOR 3.0	Toll like receptors	Organismal systems	Immune system
+P46734	MAP2K3	5606	WikiPathways	Integrin-mediated cell adhesion	Cellular processes and organization	Cellular community
+P46734	MAP2K3	5606	WikiPathways	16p11.2 proximal deletion syndrome	Diseases	Neuropsychiatric and neurodevelopmental disorders
+P46734	MAP2K3	5606	WikiPathways	TGF-beta signaling pathway	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	WikiPathways	4-hydroxytamoxifen, dexamethasone, and retinoic acids regulation of p27 expression	Drugs and vitamins	Drug action
+P46734	MAP2K3	5606	WikiPathways	Hepatitis B infection	Diseases	Infectious diseases
+P46734	MAP2K3	5606	WikiPathways	Thyroid stimulating hormone (TSH) signaling pathway	Organismal systems	Endocrine system
+P46734	MAP2K3	5606	WikiPathways	Glioblastoma signaling pathways	Diseases	Cancer
+P46734	MAP2K3	5606	WikiPathways	IL-1 signaling pathway	Organismal systems	Immune system
+P46734	MAP2K3	5606	WikiPathways	Epithelial to mesenchymal transition in colorectal cancer	Diseases	Cancer
+P46734	MAP2K3	5606	WikiPathways	MicroRNAs in cardiomyocyte hypertrophy	Diseases	Cardiovascular diseases
+P46734	MAP2K3	5606	WikiPathways	Signal transduction through IL1R	Organismal systems	Immune system
+P46734	MAP2K3	5606	WikiPathways	MAPK signaling pathway	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	WikiPathways	Toll-like receptor signaling pathway	Organismal systems	Immune system
+P46734	MAP2K3	5606	WikiPathways	Insulin signaling	Organismal systems	Endocrine system
+P46734	MAP2K3	5606	WikiPathways	MAPK cascade	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	WikiPathways	Interleukin-1 (IL-1) structural pathway	Organismal systems	Immune system
+P46734	MAP2K3	5606	WikiPathways	Host-pathogen interaction of human coronaviruses - MAPK signaling	Diseases	Infectious diseases
+P46734	MAP2K3	5606	WikiPathways	Photodynamic therapy-induced AP-1 survival signaling	Cellular processes and organization	Cellular response to stimuli
+P46734	MAP2K3	5606	WikiPathways	TNF-alpha signaling pathway	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	WikiPathways	Serotonin HTR1 group and FOS pathway	Organismal systems	Nervous system
+P46734	MAP2K3	5606	WikiPathways	Vitamin D in inflammatory diseases	Diseases	Endocrine and metabolic diseases
+P46734	MAP2K3	5606	WikiPathways	Cardiac hypertrophic response	Diseases	Cardiovascular diseases
+P46734	MAP2K3	5606	WikiPathways	Translation inhibitors in chronically activated PDGFRA cells	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	WikiPathways	Malignant pleural mesothelioma	Diseases	Cancer
+P46734	MAP2K3	5606	WikiPathways	Interferon type I signaling pathways	Organismal systems	Immune system
+P46734	MAP2K3	5606	WikiPathways	VEGFA-VEGFR2 signaling	Environmental information processing	Signal transduction
+P46734	MAP2K3	5606	WikiPathways	Angiopoietin-like protein 8 regulatory pathway	Organismal systems	Digestive system
+P46734	MAP2K3	5606	WikiPathways	Embryonic stem cell pluripotency pathways	Cellular processes and organization	Cellular community
+P46734	MAP2K3	5606	PathBank	Fc Epsilon Receptor I Signaling in Mast Cells	Organismal systems	Immune system
+P46734	MAP2K3	5606	PathBank	TNF/Stress Related Signaling	Cellular processes and organization	Cellular response to stimuli
+P46734	MAP2K3	5606	PathBank	Toll-Like Receptor Pathway 1	Organismal systems	Immune system
+P52564	MAP2K6	5608	ACSN2	TCR SIGNALING	Organismal systems	Immune system
+P52564	MAP2K6	5608	ACSN2	APOPTOSIS	Cellular processes and organization	Cell growth and death
+P52564	MAP2K6	5608	ACSN2	DEATH RECEPTOR PATHWAYS	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	ACSN2	CASPASES	Cellular processes and organization	Cell growth and death
+P52564	MAP2K6	5608	ACSN2	MAPK	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	BioCarta	BIOCARTA FMLP PATHWAY	Organismal systems	Immune system
+P52564	MAP2K6	5608	BioCarta	BIOCARTA HCMV PATHWAY	Diseases	Infectious diseases
+P52564	MAP2K6	5608	BioCarta	BIOCARTA KERATINOCYTE PATHWAY	Organismal systems	Development and regeneration
+P52564	MAP2K6	5608	BioCarta	BIOCARTA MAPK PATHWAY	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	BioCarta	BIOCARTA NTHI PATHWAY	Diseases	Infectious diseases
+P52564	MAP2K6	5608	BioCarta	BIOCARTA IL1R PATHWAY	Organismal systems	Immune system
+P52564	MAP2K6	5608	BioCarta	BIOCARTA STRESS PATHWAY	Cellular processes and organization	Cellular response to stimuli
+P52564	MAP2K6	5608	BioCarta	BIOCARTA TOLL PATHWAY	Organismal systems	Immune system
+P52564	MAP2K6	5608	KEGG	Pathways of neurodegeneration - multiple diseases	Diseases	Neuropsychiatric and neurodevelopmental disorders
+P52564	MAP2K6	5608	KEGG	Inflammatory mediator regulation of TRP channels	Organismal systems	Sensory system
+P52564	MAP2K6	5608	KEGG	Fc epsilon RI signaling pathway	Organismal systems	Immune system
+P52564	MAP2K6	5608	KEGG	Salmonella infection	Diseases	Infectious diseases
+P52564	MAP2K6	5608	KEGG	Yersinia infection	Diseases	Infectious diseases
+P52564	MAP2K6	5608	KEGG	PD-L1 expression and PD-1 checkpoint pathway in cancer	Diseases	Cancer
+P52564	MAP2K6	5608	KEGG	Growth hormone synthesis, secretion and action	Organismal systems	Endocrine system
+P52564	MAP2K6	5608	KEGG	GnRH signaling pathway	Organismal systems	Endocrine system
+P52564	MAP2K6	5608	KEGG	Amyotrophic lateral sclerosis	Diseases	Neuropsychiatric and neurodevelopmental disorders
+P52564	MAP2K6	5608	KEGG	TNF signaling pathway	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	KEGG	Lipid and atherosclerosis	Diseases	Cardiovascular diseases
+P52564	MAP2K6	5608	KEGG	Rap1 signaling pathway	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	KEGG	MAPK signaling pathway	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	KEGG	Toxoplasmosis	Diseases	Infectious diseases
+P52564	MAP2K6	5608	KEGG	Toll-like receptor signaling pathway	Organismal systems	Immune system
+P52564	MAP2K6	5608	KEGG	Human immunodeficiency virus 1 infection	Diseases	Infectious diseases
+P52564	MAP2K6	5608	KEGG	Cellular senescence	Cellular processes and organization	Cell growth and death
+P52564	MAP2K6	5608	KEGG	Epstein-Barr virus infection	Diseases	Infectious diseases
+P52564	MAP2K6	5608	KEGG	Hepatitis B	Diseases	Infectious diseases
+P52564	MAP2K6	5608	Panther_Pathway	EGF receptor signaling pathway	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	Panther_Pathway	FGF signaling pathway	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	Panther_Pathway	Oxidative stress response	Cellular processes and organization	Cellular response to stimuli
+P52564	MAP2K6	5608	Panther_Pathway	Ras Pathway	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	PharmGKB	Tacrolimus Cyclosporine Pathway Pharmacodynamics	Drugs and vitamins	Drug action
+P52564	MAP2K6	5608	PharmGKB	VEGF Signaling Pathway	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	REACTOME	Disease	Diseases	Diseases
+P52564	MAP2K6	5608	REACTOME	Uptake and function of anthrax toxins	Diseases	Infectious diseases
+P52564	MAP2K6	5608	REACTOME	Uptake and actions of bacterial toxins	Diseases	Infectious diseases
+P52564	MAP2K6	5608	REACTOME	Infectious disease	Diseases	Infectious diseases
+P52564	MAP2K6	5608	REACTOME	Bacterial Infection Pathways	Diseases	Infectious diseases
+P52564	MAP2K6	5608	REACTOME	Cytokine Signaling in Immune system	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Toll Like Receptor 4 (TLR4) Cascade	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	MyD88:MAL(TIRAP) cascade initiated on plasma membrane	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	MyD88-independent TLR4 cascade	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Toll Like Receptor 9 (TLR9) Cascade	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Toll Like Receptor 10 (TLR10) Cascade	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Toll Like Receptor 3 (TLR3) Cascade	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Toll Like Receptor 5 (TLR5) Cascade	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Toll Like Receptor TLR1:TLR2 Cascade	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Toll Like Receptor 7/8 (TLR7/8) Cascade	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Toll Like Receptor TLR6:TLR2 Cascade	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Innate Immune System	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Immune System	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Toll-like Receptor Cascades	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Toll Like Receptor 2 (TLR2) Cascade	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Cellular responses to stress	Cellular processes and organization	Cellular response to stimuli
+P52564	MAP2K6	5608	REACTOME	Oxidative Stress Induced Senescence	Cellular processes and organization	Cell growth and death
+P52564	MAP2K6	5608	REACTOME	Cellular Senescence	Cellular processes and organization	Cell growth and death
+P52564	MAP2K6	5608	REACTOME	Interleukin-17 signaling	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Signaling by Interleukins	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	MAP kinase activation	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	activated TAK1 mediates p38 MAPK activation	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	Cellular responses to stimuli	Cellular processes and organization	Cellular response to stimuli
+P52564	MAP2K6	5608	REACTOME	TRIF(TICAM1)-mediated TLR4 signaling	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	TRAF6 mediated induction of NFkB and MAP kinases upon TLR7/8 or 9 activation	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	MyD88 dependent cascade initiated on endosome	Organismal systems	Immune system
+P52564	MAP2K6	5608	REACTOME	MyD88 cascade initiated on plasma membrane	Organismal systems	Immune system
+P52564	MAP2K6	5608	SIGNOR 3.0	P38 Signaling	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	SIGNOR 3.0	P38 Signaling and Myogenesis	Organismal systems	Development and regeneration
+P52564	MAP2K6	5608	SIGNOR 3.0	TGF-beta Signaling	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	SIGNOR 3.0	Toll like receptors	Organismal systems	Immune system
+P52564	MAP2K6	5608	WikiPathways	Integrin-mediated cell adhesion	Cellular processes and organization	Cellular community
+P52564	MAP2K6	5608	WikiPathways	16p11.2 proximal deletion syndrome	Diseases	Neuropsychiatric and neurodevelopmental disorders
+P52564	MAP2K6	5608	WikiPathways	TGF-beta signaling pathway	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	WikiPathways	4-hydroxytamoxifen, dexamethasone, and retinoic acids regulation of p27 expression	Drugs and vitamins	Drug action
+P52564	MAP2K6	5608	WikiPathways	Hepatitis B infection	Diseases	Infectious diseases
+P52564	MAP2K6	5608	WikiPathways	Thyroid stimulating hormone (TSH) signaling pathway	Organismal systems	Endocrine system
+P52564	MAP2K6	5608	WikiPathways	Glioblastoma signaling pathways	Diseases	Cancer
+P52564	MAP2K6	5608	WikiPathways	IL-1 signaling pathway	Organismal systems	Immune system
+P52564	MAP2K6	5608	WikiPathways	Epithelial to mesenchymal transition in colorectal cancer	Diseases	Cancer
+P52564	MAP2K6	5608	WikiPathways	MicroRNAs in cardiomyocyte hypertrophy	Diseases	Cardiovascular diseases
+P52564	MAP2K6	5608	WikiPathways	Signal transduction through IL1R	Organismal systems	Immune system
+P52564	MAP2K6	5608	WikiPathways	MAPK signaling pathway	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	WikiPathways	Toll-like receptor signaling pathway	Organismal systems	Immune system
+P52564	MAP2K6	5608	WikiPathways	Insulin signaling	Organismal systems	Endocrine system
+P52564	MAP2K6	5608	WikiPathways	MAPK cascade	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	WikiPathways	Interleukin-1 (IL-1) structural pathway	Organismal systems	Immune system
+P52564	MAP2K6	5608	WikiPathways	Host-pathogen interaction of human coronaviruses - MAPK signaling	Diseases	Infectious diseases
+P52564	MAP2K6	5608	WikiPathways	Photodynamic therapy-induced AP-1 survival signaling	Cellular processes and organization	Cellular response to stimuli
+P52564	MAP2K6	5608	WikiPathways	TNF-alpha signaling pathway	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	WikiPathways	Serotonin HTR1 group and FOS pathway	Organismal systems	Nervous system
+P52564	MAP2K6	5608	WikiPathways	Vitamin D in inflammatory diseases	Diseases	Endocrine and metabolic diseases
+P52564	MAP2K6	5608	WikiPathways	Cardiac hypertrophic response	Diseases	Cardiovascular diseases
+P52564	MAP2K6	5608	WikiPathways	Translation inhibitors in chronically activated PDGFRA cells	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	WikiPathways	Malignant pleural mesothelioma	Diseases	Cancer
+P52564	MAP2K6	5608	WikiPathways	Interferon type I signaling pathways	Organismal systems	Immune system
+P52564	MAP2K6	5608	WikiPathways	VEGFA-VEGFR2 signaling	Environmental information processing	Signal transduction
+P52564	MAP2K6	5608	WikiPathways	Angiopoietin-like protein 8 regulatory pathway	Organismal systems	Digestive system
+P52564	MAP2K6	5608	WikiPathways	Embryonic stem cell pluripotency pathways	Cellular processes and organization	Cellular community
+P52564	MAP2K6	5608	PathBank	Fc Epsilon Receptor I Signaling in Mast Cells	Organismal systems	Immune system
+P52564	MAP2K6	5608	PathBank	TNF/Stress Related Signaling	Cellular processes and organization	Cellular response to stimuli
+P52564	MAP2K6	5608	PathBank	Toll-Like Receptor Pathway 1	Organismal systems	Immune system
+Q7L7X3	TAOK1	57551	ACSN2	MAPK	Environmental information processing	Signal transduction
+Q7L7X3	TAOK1	57551	KEGG	MAPK signaling pathway	Environmental information processing	Signal transduction
+Q7L7X3	TAOK1	57551	REACTOME	Signal Transduction	Environmental information processing	Signal transduction
+Q7L7X3	TAOK1	57551	REACTOME	Signaling by Rho GTPases	Environmental information processing	Signal transduction
+Q7L7X3	TAOK1	57551	REACTOME	Signaling by Rho GTPases, Miro GTPases and RHOBTB3	Environmental information processing	Signal transduction
+Q7L7X3	TAOK1	57551	SIGNOR 3.0	P38 Signaling	Environmental information processing	Signal transduction
+Q7L7X3	TAOK1	57551	WikiPathways	MAPK signaling pathway	Environmental information processing	Signal transduction
+Q9UL54	TAOK2	9344	ACSN2	MAPK	Environmental information processing	Signal transduction
+Q9UL54	TAOK2	9344	KEGG	MAPK signaling pathway	Environmental information processing	Signal transduction
+Q9UL54	TAOK2	9344	SIGNOR 3.0	P38 Signaling	Environmental information processing	Signal transduction
+Q9UL54	TAOK2	9344	WikiPathways	16p11.2 proximal deletion syndrome	Diseases	Neuropsychiatric and neurodevelopmental disorders
+Q9UL54	TAOK2	9344	WikiPathways	MAPK signaling pathway	Environmental information processing	Signal transduction
+Q9UL54	TAOK2	9344	WikiPathways	VEGFA-VEGFR2 signaling	Environmental information processing	Signal transduction
+Q9H2K8	TAOK3	51347	ACSN2	MAPK	Environmental information processing	Signal transduction
+Q9H2K8	TAOK3	51347	KEGG	MAPK signaling pathway	Environmental information processing	Signal transduction
+Q9H2K8	TAOK3	51347	REACTOME	Signal Transduction	Environmental information processing	Signal transduction
+Q9H2K8	TAOK3	51347	REACTOME	Signaling by Rho GTPases	Environmental information processing	Signal transduction
+Q9H2K8	TAOK3	51347	REACTOME	RHO GTPase cycle	Environmental information processing	Signal transduction
+Q9H2K8	TAOK3	51347	REACTOME	Signaling by Rho GTPases, Miro GTPases and RHOBTB3	Environmental information processing	Signal transduction
+Q9H2K8	TAOK3	51347	WikiPathways	MAPK signaling pathway	Environmental information processing	Signal transduction
+ 
+Script execution finished.

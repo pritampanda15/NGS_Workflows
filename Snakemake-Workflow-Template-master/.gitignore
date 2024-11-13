@@ -1,0 +1,15 @@
+# ignore directory
+.idea/
+.vscode/
+*.logs/
+*.snakemake/
+*.ipynb_checkpoints/
+pipes/.snakemake/
+pipes/*/
+docs/build/
+utils/__pycache__/
+
+# ignore files
+*.DS_Store
+*.log
+*.icloud
